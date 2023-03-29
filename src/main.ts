@@ -128,7 +128,7 @@ async function kayak(page: Page) {
       console.log(`\t${leg.legDurationDisplay}`);
       leg.segments.forEach((x) => {
         process.stdout.write(
-          `\t\t${x.airline.code}${x.flightNumber}\t${x.duration}\t${x.departure.isoDateTimeLocal}->${x.arrival.isoDateTimeLocal}\t${x.departure.airport.displayName}(${x.departure.airport.code})->${x.arrival.airport.displayName}(${x.arrival.airport.code})`
+          `\t\t${x.airline.code}${x.flightNumber}\t${x.duration}\t${x.departure.isoDateTimeLocal}->${x.arrival.isoDateTimeLocal}\t${x.departure.airport.displayName}(${x.departure.airport.code})\t-> ${x.arrival.airport.displayName}(${x.arrival.airport.code})`
         );
         if ("layover" in x) {
           process.stdout.write(` (Layover: ${x.layover.duration})`);

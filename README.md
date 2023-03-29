@@ -5,7 +5,7 @@ pnpm install
 
 # Install browser
 ```sh
-pnpm exec playwright install chromium
+npx playwright install chromium
 ```
 
 # Run with
