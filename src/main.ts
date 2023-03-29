@@ -1,31 +1,79 @@
 import { chromium, Page } from "playwright";
 
-class RoundTripTicket {
+type RoundTripTicket = {
   price: number;
   departTime: string | null;
   departAirline: string | null;
   returnTime: string | null;
   returnAirline: string | null;
   link: string | null;
-  constructor(
-    price: number,
-    departTime: string | null,
-    departAirline: string | null,
-    returnTime: string | null,
-    returnAirline: string | null,
-    link: string | null
-  ) {
-    this.price = price;
-    this.departTime = departTime;
-    this.departAirline = departAirline;
-    this.returnTime = returnTime;
-    this.returnAirline = returnAirline;
-    this.link = link;
-  }
+};
+
+type KayakTicketLegSegment = {
+  flightNumber: number;
+  airline: {
+    code: string;
+    name: string;
+  };
+  departure: {
+    airport: {
+      code: string;
+      displayName: string;
+    };
+    isoDateTimeLocal: string;
+  };
+  arrival: KayakTicket["legs"][0]["segments"][1]["departure"];
+  duration: string;
+  cabinDisplay: string;
+  segmentQualityItems: {
+    equipmentTypeName: string;
+  };
+};
+type KayakTicketLeg = {
+  legDurationDisplay: string;
+  legDurationMinutes: number;
+  segments: [
+    KayakTicketLegSegment & {
+      layover: {
+        duration: string;
+      };
+    },
+    KayakTicketLegSegment
+  ];
+};
+type KayakTicket = {
+  legs: [KayakTicketLeg, KayakTicketLeg];
+  optionsByFare: {
+    options: {
+      url: string;
+      fees: {
+        rawPrice: number;
+        carryOnBagData: {
+          displayPrice: string;
+        };
+        checkedBagData: {
+          displayPrice: string;
+          secondBag: { status: string };
+        };
+      };
+    }[];
+  }[];
+};
+
+function kayakMinFareOption(ticket: KayakTicket) {
+  let option = ticket.optionsByFare[0].options[0];
+  ticket.optionsByFare.forEach((x) =>
+    x.options.forEach((x) => {
+      if (x.fees.rawPrice < option.fees.rawPrice) option = x;
+    })
+  );
+  return option;
 }
 
 async function kayak(page: Page) {
+  const tickets: KayakTicket[] = [];
   const promises: Promise<void>[] = [];
+
   page.on("response", (resp) => {
     if (!resp.url().includes("/flights/results/FlightSearchPoll")) return;
     promises.push(
@@ -38,29 +86,55 @@ async function kayak(page: Page) {
         info = info.substring(0, info.indexOf("R9.redux.")).trimEnd();
         if (info.endsWith(" })")) info = info.substring(0, info.length - 3);
         const jsObj = JSON.parse(info);
-        console.log(jsObj);
+        Object.values(jsObj.results as object[]).forEach((x) => {
+          if ("legs" in x) tickets.push(x as KayakTicket);
+        });
         resolve();
       })
     );
   });
 
   await page.goto(
-    "https://www.kayak.com/flights/ATL-WAS/2023-04-26/2023-05-03"
+    "https://www.kayak.com/flights/JFK-PEK/2023-05-20/2023-08-15"
   );
+  await page.waitForTimeout(5000);
 
-  // try {
-  //   for (let i = 0; i < 10; i++) {
-  //     const loadMore = await page.waitForSelector(".show-more-button");
-  //     await loadMore.click();
-  //   }
-  // } catch (e) {}
-  // console.log("kayak: 10 more result-pagess loaded, should be enough");
+  try {
+    const totalPages = 10;
+    for (let i = 2; i <= totalPages; i++) {
+      const loadMore = await page.waitForSelector(".show-more-button");
+      await loadMore.click();
+      console.log(`kayak: loading page ${i}/${totalPages}`);
+      await page.waitForSelector(".show-more-button");
+    }
+  } catch (e) {}
 
   await Promise.allSettled(promises);
+  console.log(`kayak: allSettled, ${tickets.length} tickets`);
 
-  /*
-{"resultId":"d4aa80d2ed440b12656fdeb60eb6ae28","uiResultId":"d4aa80d2ed440b12656fdeb60eb6ae28","legs":[{"legId":"ATLCAN1682546400000BA2261682632800000CZ3042","legIndex":0,"distinctAirlines":[{"code":"BA","name":"British Airways","logoUrl":"https://content.r9cdn.net/rimg/provider-logos/airlines/v/BA.png?crop=false&width=108&height=92&fallback=default3.png&_v=89077931bb09ce2fc497652a6aaa40b2"},{"code":"CZ","name":"China Southern","logoUrl":"https://content.r9cdn.net/rimg/provider-logos/airlines/v/CZ.png?crop=false&width=108&height=92&fallback=default2.png&_v=315ef6d04651b818d44ef49c20c16f44"}],"displayAirline":{"code":"MULT","name":"Multiple airlines","logoUrl":"https://content.r9cdn.net/rimg/provider-logos/airlines/v/MULT.png?crop=false&width=108&height=92&fallback=default2.png&_v=230551432b21d8d61f889d8fad67a560"},"legDurationDisplay":"30h 40m","legDurationMinutes":1840,"segments":[{"flightNumber":"226","airline":{"code":"BA","name":"British Airways","logoUrl":"https://content.r9cdn.net/rimg/provider-logos/airlines/v/BA.png?crop=false&width=108&height=92&fallback=default3.png&_v=89077931bb09ce2fc497652a6aaa40b2"},"departure":{"airport":{"code":"ATL","displayName":"Atlanta Hartsfield-Jackson","fullDisplayName":"Hartsfield-Jackson"},"isoDateTimeLocal":"2023-04-26T22:25:00"},"arrival":{"airport":{"code":"LHR","displayName":"London Heathrow","fullDisplayName":"Heathrow"},"isoDateTimeLocal":"2023-04-27T11:35:00","isDateMismatch":true},"duration":"8h 10m","cabinDisplay":"Basic Economy","cabinCode":"bfbe","isOvernight":true,"segmentQualityItems":{"equipmentTypeName":"Boeing 777","qualityItems":[{"icon":"FLIGHT","msg":"Boeing 777 (Wide-body jet)"}]},"layover":{"duration":"10h 35m","message":"Change planes in London (LHR)","isLong":true,"isSelfTransfer":true}},{"flightNumber":"304","airline":{"code":"CZ","name":"China Southern","logoUrl":"https://content.r9cdn.net/rimg/provider-logos/airlines/v/CZ.png?crop=false&width=108&height=92&fallback=default2.png&_v=315ef6d04651b818d44ef49c20c16f44"},"departure":{"airport":{"code":"LHR","displayName":"London Heathrow","fullDisplayName":"Heathrow","cityCode":"LON","cityName":"London"},"isoDateTimeLocal":"2023-04-27T22:10:00"},"arrival":{"airport":{"code":"CAN","displayName":"Guangzhou Baiyun","fullDisplayName":"Baiyun"},"isoDateTimeLocal":"2023-04-28T17:05:00","isDateMismatch":true},"duration":"11h 55m","cabinDisplay":"Economy","cabinCode":"e","isOvernight":true,"segmentQualityItems":{"equipmentTypeName":"Boeing 787-9 Dreamliner","qualityItems":[{"icon":"FLIGHT","msg":"Boeing 787-9 Dreamliner (Wide-body jet)"}]}}]},{"legId":"CANATL1683115200000OZ3701683136800000OZ2721683129600000AS4923","legIndex":1,"distinctAirlines":[{"code":"OZ","name":"Asiana Airlines","logoUrl":"https://content.r9cdn.net/rimg/provider-logos/airlines/v/OZ.png?crop=false&width=108&height=92&fallback=default2.png&_v=c1801956f050e1e41787fa214a09248f"},{"code":"AS","name":"Alaska Airlines","logoUrl":"https://content.r9cdn.net/rimg/provider-logos/airlines/v/AS.png?crop=false&width=108&height=92&fallback=default2.png&_v=7e7c4110616a97db4d99676711cb7247"}],"displayAirline":{"code":"MULT","name":"Multiple airlines","logoUrl":"https://content.r9cdn.net/rimg/provider-logos/airlines/v/MULT.png?crop=false&width=108&height=92&fallback=default2.png&_v=230551432b21d8d61f889d8fad67a560"},"legDurationDisplay":"23h 32m","legDurationMinutes":1412,"segments":[{"flightNumber":"370","airline":{"code":"OZ","name":"Asiana Airlines","logoUrl":"https://content.r9cdn.net/rimg/provider-logos/airlines/v/OZ.png?crop=false&width=108&height=92&fallback=default2.png&_v=c1801956f050e1e41787fa214a09248f"},"departure":{"airport":{"code":"CAN","displayName":"Guangzhou Baiyun","fullDisplayName":"Baiyun"},"isoDateTimeLocal":"2023-05-03T12:25:00"},"arrival":{"airport":{"code":"ICN","displayName":"Incheon Intl","fullDisplayName":"Incheon Intl"},"isoDateTimeLocal":"2023-05-03T17:00:00"},"duration":"3h 35m","cabinDisplay":"Economy","cabinCode":"e","segmentQualityItems":{"equipmentTypeName":"Boeing 777-200LR","qualityItems":[{"icon":"FLIGHT","msg":"Boeing 777-200LR (Wide-body jet)"}]},"layover":{"duration":"1h 15m","message":"Change planes in Incheon (ICN)"}},{"flightNumber":"272","airline":{"code":"OZ","name":"Asiana Airlines","logoUrl":"https://content.r9cdn.net/rimg/provider-logos/airlines/v/OZ.png?crop=false&width=108&height=92&fallback=default2.png&_v=c1801956f050e1e41787fa214a09248f"},"departure":{"airport":{"code":"ICN","displayName":"Incheon Intl","fullDisplayName":"Incheon Intl"},"isoDateTimeLocal":"2023-05-03T18:15:00"},"arrival":{"airport":{"code":"SEA","displayName":"Seattle/Tacoma Intl","fullDisplayName":"Seattle/Tacoma Intl"},"isoDateTimeLocal":"2023-05-03T12:45:00"},"duration":"10h 30m","cabinDisplay":"Economy","cabinCode":"e","isOvernight":true,"segmentQualityItems":{"equipmentTypeName":"Boeing 777-200LR","qualityItems":[{"icon":"FLIGHT","msg":"Boeing 777-200LR (Wide-body jet)"}]},"layover":{"duration":"3h 25m","message":"Change planes in Seattle (SEA)","isLong":true,"isSelfTransfer":true}},{"flightNumber":"492","airline":{"code":"AS","name":"Alaska Airlines","logoUrl":"https://content.r9cdn.net/rimg/provider-logos/airlines/v/AS.png?crop=false&width=108&height=92&fallback=default2.png&_v=7e7c4110616a97db4d99676711cb7247"},"departure":{"airport":{"code":"SEA","displayName":"Seattle/Tacoma Intl","fullDisplayName":"Seattle/Tacoma Intl","cityCode":"SEA","cityName":"Seattle"},"isoDateTimeLocal":"2023-05-03T16:10:00"},"arrival":{"airport":{"code":"ATL","displayName":"Atlanta Hartsfield-Jackson","fullDisplayName":"Hartsfield-Jackson"},"isoDateTimeLocal":"2023-05-03T23:57:00"},"duration":"4h 47m","cabinDisplay":"Saver","cabinCode":"bfbe","segmentQualityItems":{"equipmentTypeName":"Boeing 737-900 (winglets)","qualityItems":[{"icon":"FLIGHT","msg":"Boeing 737-900 (winglets) (Narrow-body jet)"},{"icon":"WIFI","msg":"Wi-Fi available"},{"icon":"POWER","msg":"Power available"}]}}]}],"trackingDataLayer":{"tagLayerPrice":2663},"optionsByFare":[{"fareName":{"fareId":"NOBAG_ECONOMY","displayName":"Basic Economy, Economy"},"options":[{"url":"/book/flight?code=biDiZKNjnT.47F3EeHCWiIEdn9PX-8xhQ.266300.d4aa80d2ed440b12656fdeb60eb6ae28&h=c3221e541eb4&sub=E-19387ac18a6","bookingId":"E-19387ac18a6","displayPrice":"$2,663","providerInfo":{"code":"KIWIVI","displayName":"Kiwi.com","logoUrls":[{"image":"https://content.r9cdn.net/rimg/provider-logos/airlines/v/SKYPICKER.png?crop=false&width=108&height=92&fallback=default3.png&_v=554e7b58a40b798a35cbdf6f30ba584b","name":"Kiwi.com"}],"currency":"USD","countryName":"United States"},"fees":{"rawPrice":2663,"basePrice":"$2,663","totalPrice":"$2,663","carryOnBagData":{"status":"INCLUDED","displayPrice":"$0","numSelected":0},"checkedBagData":{"status":"FEE","displayPrice":"$177","numSelected":0,"secondBag":{"status":"UNKNOWN"}},"carryOnDisplay":"Included","checkedBagDisplay":"Not included"},"flags":{"isFeaturedProvider":true,"isSelfTransferProtection":false,"hasVirtualInterline":true},"qualityFlags":{"flag":"","cancellation":"no flag","accuracy":"Invalid","standards":"Invalid","fees":"Invalid","score":0},"fareAmenities":[{"type":"ANY","restriction":"INCLUDED","message":"Last to board"},{"type":"ANY","restriction":"INCLUDED","message":"Carry-on hand baggage"},{"type":"ANY","restriction":"FEE","message":"Food and beverages"},{"type":"ANY","restriction":"FEE","message":"Extra legroom"},{"type":"ANY","restriction":"FEE","message":"First checked bag"},{"type":"ANY","restriction":"UNAVAILABLE","message":"Pre-reserved seat assignment"}]}],"isFeatured":true}],"displayAirline":{"code":"MULT","name":"Multiple Airlines","logoUrl":"https://content.r9cdn.net/rimg/provider-logos/airlines/v/MULT.png?crop=false&width=108&height=92&fallback=default2.png&_v=230551432b21d8d61f889d8fad67a560"},"distinctAirlines":[{"code":"BA","name":"British Airways","logoUrl":"https://content.r9cdn.net/rimg/provider-logos/airlines/v/BA.png?crop=false&width=108&height=92&fallback=default3.png&_v=89077931bb09ce2fc497652a6aaa40b2"},{"code":"CZ","name":"China Southern","logoUrl":"https://content.r9cdn.net/rimg/provider-logos/airlines/v/CZ.png?crop=false&width=108&height=92&fallback=default2.png&_v=315ef6d04651b818d44ef49c20c16f44"},{"code":"OZ","name":"Asiana Airlines","logoUrl":"https://content.r9cdn.net/rimg/provider-logos/airlines/v/OZ.png?crop=false&width=108&height=92&fallback=default2.png&_v=c1801956f050e1e41787fa214a09248f"},{"code":"AS","name":"Alaska Airlines","logoUrl":"https://content.r9cdn.net/rimg/provider-logos/airlines/v/AS.png?crop=false&width=108&height=92&fallback=default2.png&_v=7e7c4110616a97db4d99676711cb7247"}],"cabinCode":"bfbe","warnings":["VIRTUAL_INTERLINE"],"co2Info":{"co2Total":6.332376033067703,"co2Average":7.36449783969446},"itemType":"RESULT"}
-  */
+  tickets.sort(
+    (a, b) =>
+      kayakMinFareOption(a).fees.rawPrice - kayakMinFareOption(b).fees.rawPrice
+  );
+  tickets.forEach((x) => {
+    const minFareOption = kayakMinFareOption(x);
+    const url = new URL(page.url());
+    console.log(
+      `--------------------\n$${minFareOption.fees.rawPrice} ${url.protocol}//${
+        url.host
+      }${minFareOption.url.startsWith("/") ? "" : "/"}${minFareOption.url}`
+    );
+    x.legs.forEach((leg) => {
+      console.log(`\t${leg.legDurationDisplay}`);
+      leg.segments.forEach((x) =>
+        console.log(
+          `\t\t${x.airline.code}${x.flightNumber}\t${x.duration}\t${x.departure.airport.code}@${x.departure.isoDateTimeLocal}->${x.arrival.airport.code}@${x.arrival.isoDateTimeLocal}`
+        )
+      );
+    });
+  });
+
+  console.log("kayak: done");
 
   /*
 
@@ -212,9 +286,10 @@ export async function main() {
     kayak(await context.newPage()),
     // google(await context.newPage()),
   ]);
+  console.log("main: all backend tasks done");
 
-  // Turn off the browser to clean up after ourselves.
-  // await browser.close();
+  await context.close();
+  await browser.close();
 }
 
 main();
