@@ -97,7 +97,6 @@ async function kayak(page: Page) {
   await page.goto(
     "https://www.kayak.com/flights/JFK-PEK/2023-05-20/2023-08-15"
   );
-  await page.waitForTimeout(5000);
 
   try {
     const totalPages = 10;
@@ -108,6 +107,7 @@ async function kayak(page: Page) {
       await page.waitForSelector(".show-more-button");
     }
   } catch (e) {}
+  await page.waitForTimeout(1000);
 
   await Promise.allSettled(promises);
   console.log(`kayak: allSettled, ${tickets.length} tickets`);
@@ -126,11 +126,15 @@ async function kayak(page: Page) {
     );
     x.legs.forEach((leg) => {
       console.log(`\t${leg.legDurationDisplay}`);
-      leg.segments.forEach((x) =>
-        console.log(
-          `\t\t${x.airline.code}${x.flightNumber}\t${x.duration}\t${x.departure.airport.code}@${x.departure.isoDateTimeLocal}->${x.arrival.airport.code}@${x.arrival.isoDateTimeLocal}`
-        )
-      );
+      leg.segments.forEach((x) => {
+        process.stdout.write(
+          `\t\t${x.airline.code}${x.flightNumber}\t${x.duration}\t${x.departure.isoDateTimeLocal}->${x.arrival.isoDateTimeLocal}\t${x.departure.airport.displayName}(${x.departure.airport.code})->${x.arrival.airport.displayName}(${x.arrival.airport.code})`
+        );
+        if ("layover" in x) {
+          process.stdout.write(` (Layover: ${x.layover.duration})`);
+        }
+        console.log();
+      });
     });
   });
 
