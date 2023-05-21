@@ -1,4 +1,5 @@
-import { firefox, Page } from 'playwright-core'
+import { strict, strictEqual } from 'assert'
+import { Page, firefox } from 'playwright-core'
 
 type RoundTripTicket = {
   price: number
@@ -275,6 +276,53 @@ async function google(page: Page) {
   })
 }
 
+async function ctrip(
+  page: Page,
+  isOneWay: boolean,
+  from: string,
+  to: string,
+  date: Date
+) {
+  strictEqual(isOneWay, true) //todo
+  await page.goto(
+    `https://flights.ctrip.com/online/list/${
+      isOneWay ? 'oneway' : ''
+    }-${from}-${to}?depdate=${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`
+  )
+  const responsePromises: Promise<{ k: object[]; v: number }[]>[] = []
+
+  page.on('response', resp => {
+    if (!resp.url().includes('/batchSearch?')) return
+    responsePromises.push(
+      new Promise(async resolve => {
+        const jsonResp = await resp.json()
+        console.log(jsonResp)
+        
+        const flightList = jsonResp.data.flightItineraryList as {
+          flightSegments: { flightList: object[] }[]
+          priceList: { adultPrice: number }[]
+        }[]
+        strict(flightList.every(x => x.flightSegments.length === 1))
+
+        resolve(
+          flightList.map(x => ({
+            k: x.flightSegments[0].flightList,
+            v: x.priceList[0].adultPrice,
+          }))
+        )
+      })
+    )
+  })
+  await page.waitForSelector(
+    'div.flight-list.root-flights > span > div:nth-child(1)'
+  )
+  await page.waitForTimeout(2000)
+  await page.waitForLoadState('networkidle')
+
+  const tickets = (await Promise.all(responsePromises)).flat()
+  console.log(tickets)
+}
+
 export async function main() {
   const browser = await firefox.launch({
     headless: false,
@@ -287,6 +335,7 @@ export async function main() {
   await Promise.allSettled([
     // kayak(await context.newPage()),
     // google(await context.newPage()),
+    ctrip(await context.newPage(), true, 'xmn', 'hak', new Date('2023-05-22')),
   ])
   console.log('main: all backend tasks done')
 
