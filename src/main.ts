@@ -1,144 +1,142 @@
-import { firefox, Page } from "playwright-core";
+import { firefox, Page } from 'playwright-core'
 
 type RoundTripTicket = {
-  price: number;
-  departTime: string | null;
-  departAirline: string | null;
-  returnTime: string | null;
-  returnAirline: string | null;
-  link: string | null;
-};
+  price: number
+  departTime: string | null
+  departAirline: string | null
+  returnTime: string | null
+  returnAirline: string | null
+  link: string | null
+}
 
 type KayakTicketLegSegment = {
-  flightNumber: number;
+  flightNumber: number
   airline: {
-    code: string;
-    name: string;
-  };
+    code: string
+    name: string
+  }
   departure: {
     airport: {
-      code: string;
-      displayName: string;
-    };
-    isoDateTimeLocal: string;
-  };
-  arrival: KayakTicket["legs"][0]["segments"][1]["departure"];
-  duration: string;
-  cabinDisplay: string;
+      code: string
+      displayName: string
+    }
+    isoDateTimeLocal: string
+  }
+  arrival: KayakTicket['legs'][0]['segments'][1]['departure']
+  duration: string
+  cabinDisplay: string
   segmentQualityItems: {
-    equipmentTypeName: string;
-  };
-};
+    equipmentTypeName: string
+  }
+}
 type KayakTicketLeg = {
-  legDurationDisplay: string;
-  legDurationMinutes: number;
+  legDurationDisplay: string
+  legDurationMinutes: number
   segments: [
     KayakTicketLegSegment & {
       layover: {
-        duration: string;
-      };
+        duration: string
+      }
     },
     KayakTicketLegSegment
-  ];
-};
+  ]
+}
 type KayakTicket = {
-  legs: [KayakTicketLeg, KayakTicketLeg];
+  legs: [KayakTicketLeg, KayakTicketLeg]
   optionsByFare: {
     options: {
-      url: string;
+      url: string
       fees: {
-        rawPrice: number;
+        rawPrice: number
         carryOnBagData: {
-          displayPrice: string;
-        };
+          displayPrice: string
+        }
         checkedBagData: {
-          displayPrice: string;
-          secondBag: { status: string };
-        };
-      };
-    }[];
-  }[];
-};
-
-function kayakMinFareOption(ticket: KayakTicket) {
-  let option = ticket.optionsByFare[0].options[0];
-  ticket.optionsByFare.forEach((x) =>
-    x.options.forEach((x) => {
-      if (x.fees.rawPrice < option.fees.rawPrice) option = x;
-    })
-  );
-  return option;
+          displayPrice: string
+          secondBag: { status: string }
+        }
+      }
+    }[]
+  }[]
 }
 
 async function kayak(page: Page) {
-  const tickets: KayakTicket[] = [];
-  const promises: Promise<void>[] = [];
+  const tickets: KayakTicket[] = []
+  const promises: Promise<void>[] = []
 
-  page.on("response", (resp) => {
-    if (!resp.url().includes("/flights/results/FlightSearchPoll")) return;
-    promises.push(
-      new Promise(async (resolve) => {
-        const jsonResp = await resp.json();
-        const bufferedScripts = jsonResp.bufferedScripts[0] as string;
-        let info =
-          "{" +
-          bufferedScripts.substring(bufferedScripts.indexOf('"results":{'));
-        info = info.substring(0, info.indexOf("R9.redux.")).trimEnd();
-        if (info.endsWith(" })")) info = info.substring(0, info.length - 3);
-        const jsObj = JSON.parse(info);
-        Object.values(jsObj.results as object[]).forEach((x) => {
-          if ("legs" in x) tickets.push(x as KayakTicket);
-        });
-        resolve();
+  function kayakMinFareOption(ticket: KayakTicket) {
+    let option = ticket.optionsByFare[0].options[0]
+    ticket.optionsByFare.forEach(x =>
+      x.options.forEach(x => {
+        if (x.fees.rawPrice < option.fees.rawPrice) option = x
       })
-    );
-  });
+    )
+    return option
+  }
 
-  await page.goto(
-    "https://www.kayak.com/flights/JFK-PEK/2023-05-20/2023-08-15"
-  );
+  page.on('response', resp => {
+    if (!resp.url().includes('/flights/results/FlightSearchPoll')) return
+    promises.push(
+      new Promise(async resolve => {
+        const jsonResp = await resp.json()
+        const bufferedScripts = jsonResp.bufferedScripts[0] as string
+        let info =
+          '{' +
+          bufferedScripts.substring(bufferedScripts.indexOf('"results":{'))
+        info = info.substring(0, info.indexOf('R9.redux.')).trimEnd()
+        if (info.endsWith(' })')) info = info.substring(0, info.length - 3)
+        const jsObj = JSON.parse(info)
+        Object.values(jsObj.results as object[]).forEach(x => {
+          if ('legs' in x) tickets.push(x as KayakTicket)
+        })
+        resolve()
+      })
+    )
+  })
+
+  await page.goto('https://www.kayak.com/flights/JFK-PEK/2023-05-20/2023-08-15')
 
   try {
-    const totalPages = 10;
+    const totalPages = 10
     for (let i = 2; i <= totalPages; i++) {
-      const loadMore = await page.waitForSelector(".show-more-button");
-      await loadMore.click();
-      console.log(`kayak: loading page ${i}/${totalPages}`);
-      await page.waitForSelector(".show-more-button");
+      const loadMore = await page.waitForSelector('.show-more-button')
+      await loadMore.click()
+      console.log(`kayak: loading page ${i}/${totalPages}`)
+      await page.waitForSelector('.show-more-button')
     }
   } catch (e) {}
-  await page.waitForTimeout(1000);
+  await page.waitForTimeout(1000)
 
-  await Promise.allSettled(promises);
-  console.log(`kayak: allSettled, ${tickets.length} tickets`);
+  await Promise.allSettled(promises)
+  console.log(`kayak: allSettled, ${tickets.length} tickets`)
 
   tickets.sort(
     (a, b) =>
       kayakMinFareOption(a).fees.rawPrice - kayakMinFareOption(b).fees.rawPrice
-  );
-  tickets.forEach((x) => {
-    const minFareOption = kayakMinFareOption(x);
-    const url = new URL(page.url());
+  )
+  tickets.forEach(x => {
+    const minFareOption = kayakMinFareOption(x)
+    const url = new URL(page.url())
     console.log(
       `--------------------\n$${minFareOption.fees.rawPrice} ${url.protocol}//${
         url.host
-      }${minFareOption.url.startsWith("/") ? "" : "/"}${minFareOption.url}`
-    );
-    x.legs.forEach((leg) => {
-      console.log(`    ${leg.legDurationDisplay}`);
-      leg.segments.forEach((x) => {
+      }${minFareOption.url.startsWith('/') ? '' : '/'}${minFareOption.url}`
+    )
+    x.legs.forEach(leg => {
+      console.log(`    ${leg.legDurationDisplay}`)
+      leg.segments.forEach(x => {
         process.stdout.write(
           `        ${x.airline.code}${x.flightNumber}\t${x.duration}\t${x.departure.isoDateTimeLocal}->${x.arrival.isoDateTimeLocal}\t${x.departure.airport.displayName}(${x.departure.airport.code})\t-> ${x.arrival.airport.displayName}(${x.arrival.airport.code})`
-        );
-        if ("layover" in x) {
-          process.stdout.write(` (Layover: ${x.layover.duration})`);
+        )
+        if ('layover' in x) {
+          process.stdout.write(` (Layover: ${x.layover.duration})`)
         }
-        console.log();
-      });
-    });
-  });
+        console.log()
+      })
+    })
+  })
 
-  console.log("kayak: done");
+  console.log('kayak: done')
 
   /*
 
@@ -267,33 +265,33 @@ async function kayak(page: Page) {
 }
 
 async function google(page: Page) {
-  await page.goto("https://www.google.com/travel/flights");
+  await page.goto('https://www.google.com/travel/flights')
 
-  page.waitForSelector("input");
-  const inputs_ = await page.$$("input");
-  const inputs = inputs_.filter(async (x) => {
-    const box = await x.boundingBox();
-    return box != null && box.height > 0 && box.width > 0;
-  });
+  page.waitForSelector('input')
+  const inputs_ = await page.$$('input')
+  const inputs = inputs_.filter(async x => {
+    const box = await x.boundingBox()
+    return box != null && box.height > 0 && box.width > 0
+  })
 }
 
 export async function main() {
   const browser = await firefox.launch({
     headless: false,
-  });
+  })
 
   const context = await browser.newContext({
     viewport: { width: 1080, height: 1080 },
-  });
+  })
 
   await Promise.allSettled([
-    kayak(await context.newPage()),
+    // kayak(await context.newPage()),
     // google(await context.newPage()),
-  ]);
-  console.log("main: all backend tasks done");
+  ])
+  console.log('main: all backend tasks done')
 
-  await context.close();
-  await browser.close();
+  await context.close()
+  await browser.close()
 }
 
-main();
+main()
