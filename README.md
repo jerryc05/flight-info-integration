@@ -5,7 +5,7 @@ pnpm install
 
 # Install browser
 ```sh
-npx playwright install chromium
+npx playwright install firefox
 ```
 
 # Run with

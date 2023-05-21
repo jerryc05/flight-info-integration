@@ -1,4 +1,4 @@
-import { chromium, Page } from "playwright";
+import { firefox, Page } from "playwright-core";
 
 type RoundTripTicket = {
   price: number;
@@ -278,7 +278,7 @@ async function google(page: Page) {
 }
 
 export async function main() {
-  const browser = await chromium.launch({
+  const browser = await firefox.launch({
     headless: false,
   });
 
