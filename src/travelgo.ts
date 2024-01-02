@@ -5,6 +5,7 @@ import * as jsfile from './travelgo.json'
 
 export type Ticket = {
   usdPrice: number
+  link: string
   steps: {
     airline: string
     departLocalTimeIgnoreTz: Date
@@ -12,7 +13,6 @@ export type Ticket = {
     arrivalLocalTimeIgnoreTz: Date
     arrivalAirport: string
   }[]
-  link: string
 }
 
 export default {
