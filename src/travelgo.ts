@@ -60,7 +60,3 @@ const processResponse = (jsonResp: typeof SampleResponse, url: string) =>
         })),
       }) as Ticket,
   )
-/**
-Type '{ airline: string; departLocalTimeIgnoreTz: Date; departAirport: string; returnLocalTimeIgnoreTz: Date; returnAirport: string; }' is missing the following properties from type
-     '{ airline: string; departLocalTimeIgnoreTz: Date; departAirport: string; arrivalLocaTimeIgnoreTz: Date; arrivalAirport: string; }': arrivalLocaTimeIgnoreTz, arrivalAirport
- */
