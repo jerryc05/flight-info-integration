@@ -1,7 +1,7 @@
 // 北美同程
 import { Page } from 'playwright-core'
 
-import * as jsfile from './travelgo.json'
+import * as SampleResponse from './travelgo.json'
 
 export type Ticket = {
   usdPrice: number
@@ -41,7 +41,7 @@ export default {
   },
 }
 
-const processResponse = (jsonResp: typeof jsfile, url: string) =>
+const processResponse = (jsonResp: typeof SampleResponse, url: string) =>
   jsonResp.data.res.map(
     ticket =>
       ({
