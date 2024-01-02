@@ -30,6 +30,7 @@ type KayakTicketLegSegment = {
     equipmentTypeName: string
   }
 }
+
 type KayakTicketLeg = {
   legDurationDisplay: string
   legDurationMinutes: number
@@ -297,7 +298,7 @@ async function ctrip(
       new Promise(async resolve => {
         const jsonResp = await resp.json()
         console.log(jsonResp)
-        
+
         const flightList = jsonResp.data.flightItineraryList as {
           flightSegments: { flightList: object[] }[]
           priceList: { adultPrice: number }[]
