@@ -28,16 +28,15 @@ export default {
         resp.url().includes('/pciflightapi/ts/list'),
       )
 
-      let jsonResp
+      let jsonResp: typeof SampleResponse
       try {
         jsonResp = await resp.json()
+        if (!Array.isArray(jsonResp.data.res)) continue
       } catch (e) {
-        console.log('error')
-        break
+        continue
       }
       return processResponse(jsonResp, url)
     }
-    throw new Error('unreachable!')
   },
 }
 
