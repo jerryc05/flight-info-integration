@@ -9,8 +9,8 @@ export type Ticket = {
     airline: string
     departLocalTimeIgnoreTz: Date
     departAirport: string
-    returnLocaTimeIgnoreTz: Date
-    returnAirport: string
+    arrivalLocalTimeIgnoreTz: Date
+    arrivalAirport: string
   }[]
   link: string
 }
@@ -47,16 +47,20 @@ const processResponse = (jsonResp: typeof jsfile, url: string) =>
       ({
         usdPrice: ticket.avg,
         link: url,
-        steps: (ticket.dants as any[]).map((dant, idx) => ({
+        steps: ticket.dants.map((dant, idx) => ({
           airline: ticket.acs[idx].an,
-          departTime: new Date(`${ticket.fdate[idx]} ${ticket.ftime[idx]}`),
+          departLocalTimeIgnoreTz: new Date(
+            `${ticket.fdate[idx]} ${ticket.ftime[idx]}`,
+          ),
           departAirport: dant.an,
-          returnTime: new Date(`${ticket.adate[idx]} ${ticket.atime[idx]}`),
-          returnAirport: ticket.aants[idx].an,
+          arrivalLocalTimeIgnoreTz: new Date(
+            `${ticket.adate[idx]} ${ticket.atime[idx]}`,
+          ),
+          arrivalAirport: ticket.aants[idx].an,
         })),
       }) as Ticket,
   )
-
-console.dir(processResponse(jsfile, ''), {
-  depth: null,
-})
+/**
+Type '{ airline: string; departLocalTimeIgnoreTz: Date; departAirport: string; returnLocalTimeIgnoreTz: Date; returnAirport: string; }' is missing the following properties from type
+     '{ airline: string; departLocalTimeIgnoreTz: Date; departAirport: string; arrivalLocaTimeIgnoreTz: Date; arrivalAirport: string; }': arrivalLocaTimeIgnoreTz, arrivalAirport
+ */
