@@ -333,16 +333,17 @@ async function ctrip(
 export async function main() {
   const browser = await browser_.connectOverCDP('http://127.0.0.1:9222')
 
-  const context = await browser.newContext({
-    viewport: { width: 1080, height: 1080 },
-  })
+  const newContext = () =>
+    browser.newContext({
+      viewport: { width: 1080, height: 1080 },
+    })
 
   const allTickets = await Promise.all([
     // kayak(await context.newPage()),
     // google(await context.newPage()),
     // ctrip(await context.newPage(), true, 'xmn', 'hak', new Date('2023-05-22')),
     travelgo.run(
-      await context.newPage(),
+      await newContext(),
       travelgo.gen_url({
         src: 'SFO',
         dst: 'CAN',
@@ -355,8 +356,8 @@ export async function main() {
     depth: null,
   })
 
-  await context.close()
-  await browser.close()
+  // await context.close()
+  // await browser.close()
 }
 
 main()
