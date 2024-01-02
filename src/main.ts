@@ -40,7 +40,7 @@ type KayakTicketLeg = {
         duration: string
       }
     },
-    KayakTicketLegSegment
+    KayakTicketLegSegment,
   ]
 }
 type KayakTicket = {
@@ -71,7 +71,7 @@ async function kayak(page: Page) {
     ticket.optionsByFare.forEach(x =>
       x.options.forEach(x => {
         if (x.fees.rawPrice < option.fees.rawPrice) option = x
-      })
+      }),
     )
     return option
   }
@@ -92,14 +92,17 @@ async function kayak(page: Page) {
           if ('legs' in x) tickets.push(x as KayakTicket)
         })
         resolve()
-      })
+      }),
     )
   })
 
-  await page.goto('https://www.kayak.com/flights/JFK-PEK/2023-05-20/2023-08-15')
+  await page.goto(
+    'https://www.kayak.com/flights/SFO-CAN,HAK,SHA/2024-01-22?sort=price_a&fs=cfc=1' /*carry on*/ +
+      ';stops=-2'/*nonstop+1stop*/+';bfc=1'/*checked bag*/,
+  )
 
   try {
-    const totalPages = 10
+    const totalPages = 5
     for (let i = 2; i <= totalPages; i++) {
       const loadMore = await page.waitForSelector('.show-more-button')
       await loadMore.click()
@@ -114,7 +117,7 @@ async function kayak(page: Page) {
 
   tickets.sort(
     (a, b) =>
-      kayakMinFareOption(a).fees.rawPrice - kayakMinFareOption(b).fees.rawPrice
+      kayakMinFareOption(a).fees.rawPrice - kayakMinFareOption(b).fees.rawPrice,
   )
   tickets.forEach(x => {
     const minFareOption = kayakMinFareOption(x)
@@ -122,13 +125,13 @@ async function kayak(page: Page) {
     console.log(
       `--------------------\n$${minFareOption.fees.rawPrice} ${url.protocol}//${
         url.host
-      }${minFareOption.url.startsWith('/') ? '' : '/'}${minFareOption.url}`
+      }${minFareOption.url.startsWith('/') ? '' : '/'}${minFareOption.url}`,
     )
     x.legs.forEach(leg => {
       console.log(`    ${leg.legDurationDisplay}`)
       leg.segments.forEach(x => {
         process.stdout.write(
-          `        ${x.airline.code}${x.flightNumber}\t${x.duration}\t${x.departure.isoDateTimeLocal}->${x.arrival.isoDateTimeLocal}\t${x.departure.airport.displayName}(${x.departure.airport.code})\t-> ${x.arrival.airport.displayName}(${x.arrival.airport.code})`
+          `        ${x.airline.code}${x.flightNumber}\t${x.duration}\t${x.departure.isoDateTimeLocal}->${x.arrival.isoDateTimeLocal}\t${x.departure.airport.displayName}(${x.departure.airport.code})\t-> ${x.arrival.airport.displayName}(${x.arrival.airport.code})`,
         )
         if ('layover' in x) {
           process.stdout.write(` (Layover: ${x.layover.duration})`)
@@ -282,13 +285,13 @@ async function ctrip(
   isOneWay: boolean,
   from: string,
   to: string,
-  date: Date
+  date: Date,
 ) {
   strictEqual(isOneWay, true) //todo
   await page.goto(
     `https://flights.ctrip.com/online/list/${
       isOneWay ? 'oneway' : ''
-    }-${from}-${to}?depdate=${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`
+    }-${from}-${to}?depdate=${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`,
   )
   const responsePromises: Promise<{ k: object[]; v: number }[]>[] = []
 
@@ -309,13 +312,13 @@ async function ctrip(
           flightList.map(x => ({
             k: x.flightSegments[0].flightList,
             v: x.priceList[0].adultPrice,
-          }))
+          })),
         )
-      })
+      }),
     )
   })
   await page.waitForSelector(
-    'div.flight-list.root-flights > span > div:nth-child(1)'
+    'div.flight-list.root-flights > span > div:nth-child(1)',
   )
   await page.waitForTimeout(2000)
   await page.waitForLoadState('networkidle')
@@ -334,9 +337,9 @@ export async function main() {
   })
 
   await Promise.allSettled([
-    // kayak(await context.newPage()),
+    kayak(await context.newPage()),
     // google(await context.newPage()),
-    ctrip(await context.newPage(), true, 'xmn', 'hak', new Date('2023-05-22')),
+    // ctrip(await context.newPage(), true, 'xmn', 'hak', new Date('2023-05-22')),
   ])
   console.log('main: all backend tasks done')
 

@@ -1,0 +1,5544 @@
+{
+  "code": 200,
+  "data": {
+    "done": 1,
+    "result": true,
+    "tid": "GP20240102134422B6VUFUQ22T",
+    "st": 0,
+    "res": [
+      {
+        "it": 1,
+        "flightKey": "MU590D22MU5319D23",
+        "dt": "12:00",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "I",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Shanghai",
+            "cc": "SHA",
+            "an": "Hongqiao International Airport",
+            "at": "T2",
+            "ac": "SHA",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "at": "00:40",
+        "aants": [
+          {
+            "cn": "Shanghai",
+            "cc": "SHA",
+            "an": "Pudong International Airport",
+            "at": "T1",
+            "ac": "PVG",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T1",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Shanghai"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Shanghai",
+            "code": "SHA",
+            "acode": "SHA",
+            "pCode": "SHA",
+            "pAcode": "PVG",
+            "dt": "22:00",
+            "at": "17:35",
+            "asd": 1,
+            "tsd": 0,
+            "wt": 265,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "China Eastern Airlines",
+            "an": "MU590",
+            "ac": "MU",
+            "ft": 815,
+            "sh": false
+          },
+          {
+            "acn": "China Eastern Airlines",
+            "an": "MU5319",
+            "ac": "MU",
+            "ft": 160,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-23"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-23"
+        ],
+        "ftime": [
+          "12:00",
+          "22:00"
+        ],
+        "ftimeGmt8": [
+          "04:00",
+          "22:00"
+        ],
+        "adate": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "atime": [
+          "17:35",
+          "00:40"
+        ],
+        "atimeGmt8": [
+          "17:35",
+          "00:40"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "R",
+          "B"
+        ],
+        "avg": 626,
+        "avgtax": 470,
+        "p": 563,
+        "sp": 3337,
+        "tp": 4445,
+        "fsp": 470,
+        "ftax": 156,
+        "fstp": 626,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1240,
+        "rt": 10,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|4445^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^MU0590_20240122/MU5319_20240123^NORMAL",
+        "sh": false,
+        "rType": "1T",
+        "eps": [
+          {
+            "cc": "77W",
+            "cn": "Boeing 777-300ER",
+            "dp": null,
+            "mt": 3,
+            "st": 340
+          },
+          {
+            "cc": "333",
+            "cn": "Airbus A330-300",
+            "dp": null,
+            "mt": 3,
+            "st": 260
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "GTHTCTH",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "MU",
+        "merchantId": "804"
+      },
+      {
+        "it": 1,
+        "flightKey": "MU590D22FM9319D23",
+        "dt": "12:00",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "I",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Shanghai",
+            "cc": "SHA",
+            "an": "Pudong International Airport",
+            "at": "T1",
+            "ac": "PVG",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "at": "00:10",
+        "aants": [
+          {
+            "cn": "Shanghai",
+            "cc": "SHA",
+            "an": "Pudong International Airport",
+            "at": "T1",
+            "ac": "PVG",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T1",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Shanghai"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Shanghai",
+            "code": "SHA",
+            "acode": "PVG",
+            "pCode": "SHA",
+            "pAcode": "PVG",
+            "dt": "21:25",
+            "at": "17:35",
+            "asd": 1,
+            "tsd": 0,
+            "wt": 230,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "China Eastern Airlines",
+            "an": "MU590",
+            "ac": "MU",
+            "ft": 815,
+            "sh": false
+          },
+          {
+            "acn": "Shanghai Airlines",
+            "an": "FM9319",
+            "ac": "FM",
+            "ft": 165,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-23"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-23"
+        ],
+        "ftime": [
+          "12:00",
+          "21:25"
+        ],
+        "ftimeGmt8": [
+          "04:00",
+          "21:25"
+        ],
+        "adate": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "atime": [
+          "17:35",
+          "00:10"
+        ],
+        "atimeGmt8": [
+          "17:35",
+          "00:10"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "R",
+          "B"
+        ],
+        "avg": 626,
+        "avgtax": 470,
+        "p": 0,
+        "sp": 3342,
+        "tp": 4450,
+        "fsp": 470,
+        "ftax": 156,
+        "fstp": 626,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1210,
+        "rt": 10,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134351|4450^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^MU0590_20240122/FM9319_20240123^NORMAL",
+        "sh": false,
+        "rType": "1T",
+        "eps": [
+          {
+            "cc": "77W",
+            "cn": "Boeing 777-300ER",
+            "dp": null,
+            "mt": 3,
+            "st": 340
+          },
+          {
+            "cc": "73E",
+            "cn": "Boeing 737-500",
+            "dp": null,
+            "mt": 2,
+            "st": 100
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "GTHTCTH",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "MU",
+        "merchantId": "144"
+      },
+      {
+        "it": 1,
+        "flightKey": "NH107D22NH923D23",
+        "dt": "00:20",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "I",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Tokyo",
+            "cc": "TYO",
+            "an": "Haneda Airport",
+            "at": "T3",
+            "ac": "HND",
+            "t": "a",
+            "color": "",
+            "coc": "JP"
+          }
+        ],
+        "at": "13:50",
+        "aants": [
+          {
+            "cn": "Tokyo",
+            "cc": "TYO",
+            "an": "Haneda Airport",
+            "at": "T2",
+            "ac": "HND",
+            "t": "a",
+            "color": "",
+            "coc": "JP"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T1",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Tokyo"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Tokyo",
+            "code": "TYO",
+            "acode": "HND",
+            "pCode": "TYO",
+            "pAcode": "HND",
+            "dt": "09:20",
+            "at": "04:50",
+            "asd": 1,
+            "tsd": 0,
+            "wt": 270,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "ANA",
+            "an": "NH107",
+            "ac": "NH",
+            "ft": 690,
+            "sh": false
+          },
+          {
+            "acn": "ANA",
+            "an": "NH923",
+            "ac": "NH",
+            "ft": 330,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-23"
+        ],
+        "fdateGmt8": [
+          "2024-01-22",
+          "2024-01-23"
+        ],
+        "ftime": [
+          "00:20",
+          "09:20"
+        ],
+        "ftimeGmt8": [
+          "16:20",
+          "08:20"
+        ],
+        "adate": [
+          "2024-01-23",
+          "2024-01-23"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-23"
+        ],
+        "atime": [
+          "04:50",
+          "13:50"
+        ],
+        "atimeGmt8": [
+          "03:50",
+          "13:50"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "S"
+        ],
+        "avg": 742,
+        "avgtax": 487,
+        "p": 136,
+        "sp": 3460,
+        "tp": 5269,
+        "fsp": 487,
+        "ftax": 255,
+        "fstp": 742,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1290,
+        "rt": 9,
+        "t": null,
+        "asd": 1,
+        "og": "CORE~20240102134342|5057^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^NH0107_20240122/NH0923_20240123^NORMAL",
+        "sh": false,
+        "rType": "1T",
+        "eps": [
+          {
+            "cc": "77W",
+            "cn": "Boeing 777-300ER",
+            "dp": null,
+            "mt": 3,
+            "st": 340
+          },
+          {
+            "cc": "788",
+            "cn": "Boeing 787-8",
+            "dp": null,
+            "mt": 3,
+            "st": 210
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "KSCP",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "NH",
+        "merchantId": "788"
+      },
+      {
+        "it": 1,
+        "flightKey": "NH7354D22NH105D23NH923D24",
+        "dt": "20:00",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "T3",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Los Angeles",
+            "cc": "LAX",
+            "an": "Los Angeles International Airport",
+            "at": "B",
+            "ac": "LAX",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Tokyo",
+            "cc": "TYO",
+            "an": "Haneda Airport",
+            "at": "T3",
+            "ac": "HND",
+            "t": "a",
+            "color": "",
+            "coc": "JP"
+          }
+        ],
+        "at": "13:50",
+        "aants": [
+          {
+            "cn": "Los Angeles",
+            "cc": "LAX",
+            "an": "Los Angeles International Airport",
+            "at": "T7",
+            "ac": "LAX",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Tokyo",
+            "cc": "TYO",
+            "an": "Haneda Airport",
+            "at": "T2",
+            "ac": "HND",
+            "t": "a",
+            "color": "",
+            "coc": "JP"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T1",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Los Angeles",
+          "Tokyo"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Los Angeles",
+            "code": "LAX",
+            "acode": "LAX",
+            "pCode": "LAX",
+            "pAcode": "LAX",
+            "dt": "00:05",
+            "at": "21:36",
+            "asd": 0,
+            "tsd": 1,
+            "wt": 149,
+            "sp": 0,
+            "tv": 0
+          },
+          {
+            "type": "t",
+            "name": "Tokyo",
+            "code": "TYO",
+            "acode": "HND",
+            "pCode": "TYO",
+            "pAcode": "HND",
+            "dt": "09:20",
+            "at": "05:30",
+            "asd": 1,
+            "tsd": 0,
+            "wt": 230,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "ANA",
+            "an": "NH7354",
+            "ac": "NH",
+            "ft": 96,
+            "sh": true,
+            "ofn": "UA1230",
+            "oacc": "UA",
+            "oacn": "United Airlines"
+          },
+          {
+            "acn": "ANA",
+            "an": "NH105",
+            "ac": "NH",
+            "ft": 745,
+            "sh": false
+          },
+          {
+            "acn": "ANA",
+            "an": "NH923",
+            "ac": "NH",
+            "ft": 330,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "ftime": [
+          "20:00",
+          "00:05",
+          "09:20"
+        ],
+        "ftimeGmt8": [
+          "12:00",
+          "16:05",
+          "08:20"
+        ],
+        "adate": [
+          "2024-01-22",
+          "2024-01-24",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24",
+          "2024-01-24"
+        ],
+        "atime": [
+          "21:36",
+          "05:30",
+          "13:50"
+        ],
+        "atimeGmt8": [
+          "13:36",
+          "04:30",
+          "13:50"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "S"
+        ],
+        "avg": 754,
+        "avgtax": 498,
+        "p": 53,
+        "sp": 3536,
+        "tp": 5353,
+        "fsp": 498,
+        "ftax": 256,
+        "fstp": 754,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1550,
+        "rt": 9,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|5300^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^NH7354_20240122/NH0105_20240123/NH0923_20240124^NORMAL",
+        "sh": true,
+        "rType": "TCPL",
+        "eps": [
+          {
+            "cc": "320",
+            "cn": "Airbus A320",
+            "dp": null,
+            "mt": 2,
+            "st": 150
+          },
+          {
+            "cc": "789",
+            "cn": "Boeing 787-9",
+            "dp": null,
+            "mt": 3,
+            "st": 322
+          },
+          {
+            "cc": "788",
+            "cn": "Boeing 787-8",
+            "dp": null,
+            "mt": 3,
+            "st": 210
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "GTHTCTH",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "NH",
+        "merchantId": "604"
+      },
+      {
+        "it": 1,
+        "flightKey": "NH7509D22NH105D23NH923D24",
+        "dt": "17:30",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "T3",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Los Angeles",
+            "cc": "LAX",
+            "an": "Los Angeles International Airport",
+            "at": "B",
+            "ac": "LAX",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Tokyo",
+            "cc": "TYO",
+            "an": "Haneda Airport",
+            "at": "T3",
+            "ac": "HND",
+            "t": "a",
+            "color": "",
+            "coc": "JP"
+          }
+        ],
+        "at": "13:50",
+        "aants": [
+          {
+            "cn": "Los Angeles",
+            "cc": "LAX",
+            "an": "Los Angeles International Airport",
+            "at": "T7",
+            "ac": "LAX",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Tokyo",
+            "cc": "TYO",
+            "an": "Haneda Airport",
+            "at": "T2",
+            "ac": "HND",
+            "t": "a",
+            "color": "",
+            "coc": "JP"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T1",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Los Angeles",
+          "Tokyo"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Los Angeles",
+            "code": "LAX",
+            "acode": "LAX",
+            "pCode": "LAX",
+            "pAcode": "LAX",
+            "dt": "00:05",
+            "at": "19:06",
+            "asd": 0,
+            "tsd": 1,
+            "wt": 299,
+            "sp": 0,
+            "tv": 0
+          },
+          {
+            "type": "t",
+            "name": "Tokyo",
+            "code": "TYO",
+            "acode": "HND",
+            "pCode": "TYO",
+            "pAcode": "HND",
+            "dt": "09:20",
+            "at": "05:30",
+            "asd": 1,
+            "tsd": 0,
+            "wt": 230,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "ANA",
+            "an": "NH7509",
+            "ac": "NH",
+            "ft": 96,
+            "sh": true,
+            "ofn": "UA1413",
+            "oacc": "UA",
+            "oacn": "United Airlines"
+          },
+          {
+            "acn": "ANA",
+            "an": "NH105",
+            "ac": "NH",
+            "ft": 745,
+            "sh": false
+          },
+          {
+            "acn": "ANA",
+            "an": "NH923",
+            "ac": "NH",
+            "ft": 330,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "ftime": [
+          "17:30",
+          "00:05",
+          "09:20"
+        ],
+        "ftimeGmt8": [
+          "09:30",
+          "16:05",
+          "08:20"
+        ],
+        "adate": [
+          "2024-01-22",
+          "2024-01-24",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24",
+          "2024-01-24"
+        ],
+        "atime": [
+          "19:06",
+          "05:30",
+          "13:50"
+        ],
+        "atimeGmt8": [
+          "11:06",
+          "04:30",
+          "13:50"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "S"
+        ],
+        "avg": 754,
+        "avgtax": 498,
+        "p": 53,
+        "sp": 3536,
+        "tp": 5353,
+        "fsp": 498,
+        "ftax": 256,
+        "fstp": 754,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1700,
+        "rt": 9,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|5300^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^NH7509_20240122/NH0105_20240123/NH0923_20240124^NORMAL",
+        "sh": true,
+        "rType": "TCPL",
+        "eps": [
+          {
+            "cc": "7M9",
+            "cn": "Boeing 737",
+            "dp": null,
+            "mt": 2,
+            "st": 204
+          },
+          {
+            "cc": "789",
+            "cn": "Boeing 787-9",
+            "dp": null,
+            "mt": 3,
+            "st": 322
+          },
+          {
+            "cc": "788",
+            "cn": "Boeing 787-8",
+            "dp": null,
+            "mt": 3,
+            "st": 210
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "GTHTCTH",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "NH",
+        "merchantId": "604"
+      },
+      {
+        "it": 1,
+        "flightKey": "NH7304D22NH117D23NH923D25",
+        "dt": "19:10",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "T3",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Seattle",
+            "cc": "SEA",
+            "an": "Tacoma International Airport",
+            "at": "",
+            "ac": "SEA",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Tokyo",
+            "cc": "TYO",
+            "an": "Haneda Airport",
+            "at": "T3",
+            "ac": "HND",
+            "t": "a",
+            "color": "",
+            "coc": "JP"
+          }
+        ],
+        "at": "13:50",
+        "aants": [
+          {
+            "cn": "Seattle",
+            "cc": "SEA",
+            "an": "Tacoma International Airport",
+            "at": "",
+            "ac": "SEA",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Tokyo",
+            "cc": "TYO",
+            "an": "Haneda Airport",
+            "at": "T2",
+            "ac": "HND",
+            "t": "a",
+            "color": "",
+            "coc": "JP"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T1",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Seattle",
+          "Tokyo"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Seattle",
+            "code": "SEA",
+            "acode": "SEA",
+            "pCode": "SEA",
+            "pAcode": "SEA",
+            "dt": "15:35",
+            "at": "21:42",
+            "asd": 0,
+            "tsd": 1,
+            "wt": 1073,
+            "sp": 0,
+            "tv": 0
+          },
+          {
+            "type": "t",
+            "name": "Tokyo",
+            "code": "TYO",
+            "acode": "HND",
+            "pCode": "TYO",
+            "pAcode": "HND",
+            "dt": "09:20",
+            "at": "19:05",
+            "asd": 1,
+            "tsd": 1,
+            "wt": 855,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "ANA",
+            "an": "NH7304",
+            "ac": "NH",
+            "ft": 152,
+            "sh": true,
+            "ofn": "UA341",
+            "oacc": "UA",
+            "oacn": "United Airlines"
+          },
+          {
+            "acn": "ANA",
+            "an": "NH117",
+            "ac": "NH",
+            "ft": 630,
+            "sh": false
+          },
+          {
+            "acn": "ANA",
+            "an": "NH923",
+            "ac": "NH",
+            "ft": 330,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-23",
+          "2024-01-25"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-24",
+          "2024-01-25"
+        ],
+        "ftime": [
+          "19:10",
+          "15:35",
+          "09:20"
+        ],
+        "ftimeGmt8": [
+          "11:10",
+          "07:35",
+          "08:20"
+        ],
+        "adate": [
+          "2024-01-22",
+          "2024-01-24",
+          "2024-01-25"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24",
+          "2024-01-25"
+        ],
+        "atime": [
+          "21:42",
+          "19:05",
+          "13:50"
+        ],
+        "atimeGmt8": [
+          "13:42",
+          "18:05",
+          "13:50"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "S"
+        ],
+        "avg": 760,
+        "avgtax": 498,
+        "p": 53,
+        "sp": 3536,
+        "tp": 5393,
+        "fsp": 498,
+        "ftax": 262,
+        "fstp": 760,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 3040,
+        "rt": 9,
+        "t": null,
+        "asd": 3,
+        "og": "CORE~20240102134342|5340^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^NH7304_20240122/NH0117_20240123/NH0923_20240125^NORMAL",
+        "sh": true,
+        "rType": "TCPL",
+        "eps": [
+          {
+            "cc": "320",
+            "cn": "Airbus A320",
+            "dp": null,
+            "mt": 2,
+            "st": 150
+          },
+          {
+            "cc": "788",
+            "cn": "Boeing 787-8",
+            "dp": null,
+            "mt": 3,
+            "st": 210
+          },
+          {
+            "cc": "788",
+            "cn": "Boeing 787-8",
+            "dp": null,
+            "mt": 3,
+            "st": 210
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "GTHTCTH",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "NH",
+        "merchantId": "285"
+      },
+      {
+        "it": 1,
+        "flightKey": "CX873D22CX982D24",
+        "dt": "22:55",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "I",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Hong Kong",
+            "cc": "HKG",
+            "an": "Hong Kong International Airport",
+            "at": "T1",
+            "ac": "HKG",
+            "t": "a",
+            "color": "",
+            "coc": "HK"
+          }
+        ],
+        "at": "08:55",
+        "aants": [
+          {
+            "cn": "Hong Kong",
+            "cc": "HKG",
+            "an": "Hong Kong International Airport",
+            "at": "T1",
+            "ac": "HKG",
+            "t": "a",
+            "color": "",
+            "coc": "HK"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T2",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Hong Kong"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Hong Kong",
+            "code": "HKG",
+            "acode": "HKG",
+            "pCode": "HKG",
+            "pAcode": "HKG",
+            "dt": "07:55",
+            "at": "06:15",
+            "asd": 2,
+            "tsd": 0,
+            "wt": 100,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "Cathay Pacific",
+            "an": "CX873",
+            "ac": "CX",
+            "ft": 920,
+            "sh": false
+          },
+          {
+            "acn": "Cathay Pacific",
+            "an": "CX982",
+            "ac": "CX",
+            "ft": 60,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-24"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "ftime": [
+          "22:55",
+          "07:55"
+        ],
+        "ftimeGmt8": [
+          "14:55",
+          "07:55"
+        ],
+        "adate": [
+          "2024-01-24",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-24",
+          "2024-01-24"
+        ],
+        "atime": [
+          "06:15",
+          "08:55"
+        ],
+        "atimeGmt8": [
+          "06:15",
+          "08:55"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "V"
+        ],
+        "avg": 772,
+        "avgtax": 584,
+        "p": 242,
+        "sp": 4150,
+        "tp": 5483,
+        "fsp": 584,
+        "ftax": 188,
+        "fstp": 772,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1080,
+        "rt": 9,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|5241^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^CX0873_20240122/CX0982_20240124^NORMAL",
+        "sh": false,
+        "rType": "1E",
+        "eps": [
+          {
+            "cc": "359",
+            "cn": "Airbus A350-900",
+            "dp": null,
+            "mt": 3,
+            "st": 310
+          },
+          {
+            "cc": "333",
+            "cn": "Airbus A330-300",
+            "dp": null,
+            "mt": 3,
+            "st": 260
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "NLXZ",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "CX",
+        "merchantId": "257"
+      },
+      {
+        "it": 1,
+        "flightKey": "CX873D22CX988D24",
+        "dt": "22:55",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "I",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Hong Kong",
+            "cc": "HKG",
+            "an": "Hong Kong International Airport",
+            "at": "T1",
+            "ac": "HKG",
+            "t": "a",
+            "color": "",
+            "coc": "HK"
+          }
+        ],
+        "at": "21:10",
+        "aants": [
+          {
+            "cn": "Hong Kong",
+            "cc": "HKG",
+            "an": "Hong Kong International Airport",
+            "at": "T1",
+            "ac": "HKG",
+            "t": "a",
+            "color": "",
+            "coc": "HK"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T2",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Hong Kong"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Hong Kong",
+            "code": "HKG",
+            "acode": "HKG",
+            "pCode": "HKG",
+            "pAcode": "HKG",
+            "dt": "20:05",
+            "at": "06:15",
+            "asd": 2,
+            "tsd": 0,
+            "wt": 830,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "Cathay Pacific",
+            "an": "CX873",
+            "ac": "CX",
+            "ft": 920,
+            "sh": false
+          },
+          {
+            "acn": "Cathay Pacific",
+            "an": "CX988",
+            "ac": "CX",
+            "ft": 65,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-24"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "ftime": [
+          "22:55",
+          "20:05"
+        ],
+        "ftimeGmt8": [
+          "14:55",
+          "20:05"
+        ],
+        "adate": [
+          "2024-01-24",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-24",
+          "2024-01-24"
+        ],
+        "atime": [
+          "06:15",
+          "21:10"
+        ],
+        "atimeGmt8": [
+          "06:15",
+          "21:10"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "V"
+        ],
+        "avg": 772,
+        "avgtax": 584,
+        "p": 242,
+        "sp": 4150,
+        "tp": 5483,
+        "fsp": 584,
+        "ftax": 188,
+        "fstp": 772,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1815,
+        "rt": 9,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|5241^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^CX0873_20240122/CX0988_20240124^NORMAL",
+        "sh": false,
+        "rType": "1E",
+        "eps": [
+          {
+            "cc": "359",
+            "cn": "Airbus A350-900",
+            "dp": null,
+            "mt": 3,
+            "st": 310
+          },
+          {
+            "cc": "32Q",
+            "cn": "A321 NEO",
+            "dp": null,
+            "mt": 2,
+            "st": 192
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "NLXZ",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "CX",
+        "merchantId": "257"
+      },
+      {
+        "it": 1,
+        "flightKey": "AS3424D22CZ328D22",
+        "dt": "11:45",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "T2",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Los Angeles",
+            "cc": "LAX",
+            "an": "Los Angeles International Airport",
+            "at": "B",
+            "ac": "LAX",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          }
+        ],
+        "at": "05:40",
+        "aants": [
+          {
+            "cn": "Los Angeles",
+            "cc": "LAX",
+            "an": "Los Angeles International Airport",
+            "at": "T6",
+            "ac": "LAX",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T2",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Los Angeles"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Los Angeles",
+            "code": "LAX",
+            "acode": "LAX",
+            "pCode": "LAX",
+            "pAcode": "LAX",
+            "dt": "21:35",
+            "at": "13:15",
+            "asd": 0,
+            "tsd": 0,
+            "wt": 500,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "Alaska Airlines",
+            "an": "AS3424",
+            "ac": "AS",
+            "ft": 90,
+            "sh": false
+          },
+          {
+            "acn": "China Southern Airlines",
+            "an": "CZ328",
+            "ac": "CZ",
+            "ft": 965,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-22"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-23"
+        ],
+        "ftime": [
+          "11:45",
+          "21:35"
+        ],
+        "ftimeGmt8": [
+          "03:45",
+          "13:35"
+        ],
+        "adate": [
+          "2024-01-22",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "atime": [
+          "13:15",
+          "05:40"
+        ],
+        "atimeGmt8": [
+          "05:15",
+          "05:40"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "G",
+          "V"
+        ],
+        "avg": 792,
+        "avgtax": 556,
+        "p": 0,
+        "sp": 3950,
+        "tp": 5627,
+        "fsp": 556,
+        "ftax": 236,
+        "fstp": 792,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1555,
+        "rt": 5,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|5627^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^AS3424_20240122/CZ0328_20240122^NORMAL",
+        "sh": false,
+        "rType": "GW",
+        "eps": [
+          {
+            "cc": "E75",
+            "cn": "Embraer 175",
+            "dp": null,
+            "mt": 1,
+            "st": 80
+          },
+          {
+            "cc": "77W",
+            "cn": "Boeing 777-300ER",
+            "dp": null,
+            "mt": 3,
+            "st": 340
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "HSQJD",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "CZ",
+        "merchantId": "264"
+      },
+      {
+        "it": 1,
+        "flightKey": "TK080D22TK072D24",
+        "dt": "18:25",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "I",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Istanbul",
+            "cc": "IST",
+            "an": "ISTANBUL NEW AIRPORT",
+            "at": "",
+            "ac": "IST",
+            "t": "a",
+            "color": "",
+            "coc": "TR"
+          }
+        ],
+        "at": "16:35",
+        "aants": [
+          {
+            "cn": "Istanbul",
+            "cc": "IST",
+            "an": "ISTANBUL NEW AIRPORT",
+            "at": "",
+            "ac": "IST",
+            "t": "a",
+            "color": "",
+            "coc": "TR"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T1",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Istanbul"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Istanbul",
+            "code": "IST",
+            "acode": "IST",
+            "pCode": "IST",
+            "pAcode": "IST",
+            "dt": "01:50",
+            "at": "18:35",
+            "asd": 1,
+            "tsd": 1,
+            "wt": 435,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "Turkish Airlines",
+            "an": "TK080",
+            "ac": "TK",
+            "ft": 790,
+            "sh": false
+          },
+          {
+            "acn": "Turkish Airlines",
+            "an": "TK072",
+            "ac": "TK",
+            "ft": 585,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-24"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "ftime": [
+          "18:25",
+          "01:50"
+        ],
+        "ftimeGmt8": [
+          "10:25",
+          "06:50"
+        ],
+        "adate": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "atime": [
+          "18:35",
+          "16:35"
+        ],
+        "atimeGmt8": [
+          "23:35",
+          "16:35"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "L"
+        ],
+        "avg": 799,
+        "avgtax": 360,
+        "p": 75,
+        "sp": 2555,
+        "tp": 5673,
+        "fsp": 360,
+        "ftax": 439,
+        "fstp": 799,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1810,
+        "rt": 9,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|5598^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^TK0080_20240122/TK0072_20240124^NORMAL",
+        "sh": false,
+        "rType": "1T",
+        "eps": [
+          {
+            "cc": "789",
+            "cn": "Boeing 787-9",
+            "dp": null,
+            "mt": 3,
+            "st": 322
+          },
+          {
+            "cc": "77W",
+            "cn": "Boeing 777-300ER",
+            "dp": null,
+            "mt": 3,
+            "st": 340
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "NLXZ",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "TK",
+        "merchantId": "604"
+      },
+      {
+        "it": 1,
+        "flightKey": "AS3435D22CZ328D22",
+        "dt": "16:25",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "T2",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Los Angeles",
+            "cc": "LAX",
+            "an": "Los Angeles International Airport",
+            "at": "B",
+            "ac": "LAX",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          }
+        ],
+        "at": "05:40",
+        "aants": [
+          {
+            "cn": "Los Angeles",
+            "cc": "LAX",
+            "an": "Los Angeles International Airport",
+            "at": "T6",
+            "ac": "LAX",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T2",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Los Angeles"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Los Angeles",
+            "code": "LAX",
+            "acode": "LAX",
+            "pCode": "LAX",
+            "pAcode": "LAX",
+            "dt": "21:35",
+            "at": "17:51",
+            "asd": 0,
+            "tsd": 0,
+            "wt": 224,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "Alaska Airlines",
+            "an": "AS3435",
+            "ac": "AS",
+            "ft": 86,
+            "sh": false
+          },
+          {
+            "acn": "China Southern Airlines",
+            "an": "CZ328",
+            "ac": "CZ",
+            "ft": 965,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-22"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-23"
+        ],
+        "ftime": [
+          "16:25",
+          "21:35"
+        ],
+        "ftimeGmt8": [
+          "08:25",
+          "13:35"
+        ],
+        "adate": [
+          "2024-01-22",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "atime": [
+          "17:51",
+          "05:40"
+        ],
+        "atimeGmt8": [
+          "09:51",
+          "05:40"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "O",
+          "V"
+        ],
+        "avg": 809,
+        "avgtax": 573,
+        "p": 0,
+        "sp": 4070,
+        "tp": 5747,
+        "fsp": 573,
+        "ftax": 236,
+        "fstp": 809,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1275,
+        "rt": 7,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|5747^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^AS3435_20240122/CZ0328_20240122^NORMAL",
+        "sh": false,
+        "rType": "GW",
+        "eps": [
+          {
+            "cc": "E75",
+            "cn": "Embraer 175",
+            "dp": null,
+            "mt": 1,
+            "st": 80
+          },
+          {
+            "cc": "77W",
+            "cn": "Boeing 777-300ER",
+            "dp": null,
+            "mt": 3,
+            "st": 340
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "HSQJD",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "CZ",
+        "merchantId": "264"
+      },
+      {
+        "it": 1,
+        "flightKey": "OZ211D22OZ369D24",
+        "dt": "23:30",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "I",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Seoul",
+            "cc": "SEL",
+            "an": "Incheon International Airport",
+            "at": "T1",
+            "ac": "ICN",
+            "t": "a",
+            "color": "",
+            "coc": "KR"
+          }
+        ],
+        "at": "11:30",
+        "aants": [
+          {
+            "cn": "Seoul",
+            "cc": "SEL",
+            "an": "Incheon International Airport",
+            "at": "T1",
+            "ac": "ICN",
+            "t": "a",
+            "color": "",
+            "coc": "KR"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T1",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Seoul"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Seoul",
+            "code": "SEL",
+            "acode": "ICN",
+            "pCode": "SEL",
+            "pAcode": "ICN",
+            "dt": "08:30",
+            "at": "05:30",
+            "asd": 2,
+            "tsd": 0,
+            "wt": 180,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "Asiana Airlines",
+            "an": "OZ211",
+            "ac": "OZ",
+            "ft": 780,
+            "sh": false
+          },
+          {
+            "acn": "Asiana Airlines",
+            "an": "OZ369",
+            "ac": "OZ",
+            "ft": 240,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-24"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "ftime": [
+          "23:30",
+          "08:30"
+        ],
+        "ftimeGmt8": [
+          "15:30",
+          "07:30"
+        ],
+        "adate": [
+          "2024-01-24",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-24",
+          "2024-01-24"
+        ],
+        "atime": [
+          "05:30",
+          "11:30"
+        ],
+        "atimeGmt8": [
+          "04:30",
+          "11:30"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "V"
+        ],
+        "avg": 815,
+        "avgtax": 483,
+        "p": 85,
+        "sp": 3433,
+        "tp": 5789,
+        "fsp": 483,
+        "ftax": 332,
+        "fstp": 815,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1200,
+        "rt": 1,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|5755^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^OZ0211_20240122/OZ0369_20240124^NORMAL",
+        "sh": false,
+        "rType": "1T",
+        "eps": [
+          {
+            "cc": "359",
+            "cn": "Airbus A350-900",
+            "dp": null,
+            "mt": 3,
+            "st": 310
+          },
+          {
+            "cc": "32Q",
+            "cn": "A321 NEO",
+            "dp": null,
+            "mt": 2,
+            "st": 192
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "GTHTCTH",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "OZ",
+        "merchantId": "219"
+      },
+      {
+        "it": 1,
+        "flightKey": "KE024D22KE865D24",
+        "dt": "11:30",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "I",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Seoul",
+            "cc": "SEL",
+            "an": "Incheon International Airport",
+            "at": "T2",
+            "ac": "ICN",
+            "t": "a",
+            "color": "",
+            "coc": "KR"
+          }
+        ],
+        "at": "12:05",
+        "aants": [
+          {
+            "cn": "Seoul",
+            "cc": "SEL",
+            "an": "Incheon International Airport",
+            "at": "T2",
+            "ac": "ICN",
+            "t": "a",
+            "color": "",
+            "coc": "KR"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T2",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Seoul"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Seoul",
+            "code": "SEL",
+            "acode": "ICN",
+            "pCode": "SEL",
+            "pAcode": "ICN",
+            "dt": "08:55",
+            "at": "17:30",
+            "asd": 1,
+            "tsd": 1,
+            "wt": 925,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "Korean Air",
+            "an": "KE024",
+            "ac": "KE",
+            "ft": 780,
+            "sh": false
+          },
+          {
+            "acn": "Korean Air",
+            "an": "KE865",
+            "ac": "KE",
+            "ft": 250,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-24"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "ftime": [
+          "11:30",
+          "08:55"
+        ],
+        "ftimeGmt8": [
+          "03:30",
+          "07:55"
+        ],
+        "adate": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "atime": [
+          "17:30",
+          "12:05"
+        ],
+        "atimeGmt8": [
+          "16:30",
+          "12:05"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "Q"
+        ],
+        "avg": 835,
+        "avgtax": 540,
+        "p": 57,
+        "sp": 3839,
+        "tp": 5937,
+        "fsp": 540,
+        "ftax": 295,
+        "fstp": 835,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1955,
+        "rt": 9,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|5880^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^KE0024_20240122/KE0865_20240124^NORMAL",
+        "sh": false,
+        "rType": "TCPL",
+        "eps": [
+          {
+            "cc": "77W",
+            "cn": "Boeing 777-300ER",
+            "dp": null,
+            "mt": 3,
+            "st": 340
+          },
+          {
+            "cc": "772",
+            "cn": "Boeing 777-200",
+            "dp": null,
+            "mt": 3,
+            "st": 280
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "GTHTCTH",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "KE",
+        "merchantId": "839"
+      },
+      {
+        "it": 1,
+        "flightKey": "DL1431D22KE012D22KE865D24",
+        "dt": "19:25",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "T2",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Los Angeles",
+            "cc": "LAX",
+            "an": "Los Angeles International Airport",
+            "at": "B",
+            "ac": "LAX",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Seoul",
+            "cc": "SEL",
+            "an": "Incheon International Airport",
+            "at": "T2",
+            "ac": "ICN",
+            "t": "a",
+            "color": "",
+            "coc": "KR"
+          }
+        ],
+        "at": "12:05",
+        "aants": [
+          {
+            "cn": "Los Angeles",
+            "cc": "LAX",
+            "an": "Los Angeles International Airport",
+            "at": "T3",
+            "ac": "LAX",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Seoul",
+            "cc": "SEL",
+            "an": "Incheon International Airport",
+            "at": "T2",
+            "ac": "ICN",
+            "t": "a",
+            "color": "",
+            "coc": "KR"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T2",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Los Angeles",
+          "Seoul"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Los Angeles",
+            "code": "LAX",
+            "acode": "LAX",
+            "pCode": "LAX",
+            "pAcode": "LAX",
+            "dt": "22:40",
+            "at": "20:56",
+            "asd": 0,
+            "tsd": 0,
+            "wt": 104,
+            "sp": 0,
+            "tv": 0
+          },
+          {
+            "type": "t",
+            "name": "Seoul",
+            "code": "SEL",
+            "acode": "ICN",
+            "pCode": "SEL",
+            "pAcode": "ICN",
+            "dt": "08:55",
+            "at": "05:10",
+            "asd": 2,
+            "tsd": 0,
+            "wt": 225,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "Delta Air Lines",
+            "an": "DL1431",
+            "ac": "DL",
+            "ft": 91,
+            "sh": false
+          },
+          {
+            "acn": "Korean Air",
+            "an": "KE012",
+            "ac": "KE",
+            "ft": 810,
+            "sh": false
+          },
+          {
+            "acn": "Korean Air",
+            "an": "KE865",
+            "ac": "KE",
+            "ft": 250,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-22",
+          "2024-01-24"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "ftime": [
+          "19:25",
+          "22:40",
+          "08:55"
+        ],
+        "ftimeGmt8": [
+          "11:25",
+          "14:40",
+          "07:55"
+        ],
+        "adate": [
+          "2024-01-22",
+          "2024-01-24",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24",
+          "2024-01-24"
+        ],
+        "atime": [
+          "20:56",
+          "05:10",
+          "12:05"
+        ],
+        "atimeGmt8": [
+          "12:56",
+          "04:10",
+          "12:05"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "X",
+          "Q"
+        ],
+        "avg": 854,
+        "avgtax": 553,
+        "p": 59,
+        "sp": 3929,
+        "tp": 6070,
+        "fsp": 553,
+        "ftax": 301,
+        "fstp": 854,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1480,
+        "rt": 9,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|6011^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^DL1431_20240122/KE0012_20240122/KE0865_20240124^NORMAL",
+        "sh": false,
+        "rType": "TCPL",
+        "eps": [
+          {
+            "cc": "319",
+            "cn": "Airbus A319",
+            "dp": null,
+            "mt": 2,
+            "st": 110
+          },
+          {
+            "cc": "388",
+            "cn": "Airbus A380-800 ",
+            "dp": null,
+            "mt": 3,
+            "st": 490
+          },
+          {
+            "cc": "772",
+            "cn": "Boeing 777-200",
+            "dp": null,
+            "mt": 3,
+            "st": 280
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "GTHTCTH",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "KE",
+        "merchantId": "839"
+      },
+      {
+        "it": 1,
+        "flightKey": "CI003D22CI521D23",
+        "dt": "00:05",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "I",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Taipei",
+            "cc": "TPE",
+            "an": "Taoyuan Airport",
+            "at": "T2",
+            "ac": "TPE",
+            "t": "a",
+            "color": "",
+            "coc": "TW"
+          }
+        ],
+        "at": "16:15",
+        "aants": [
+          {
+            "cn": "Taipei",
+            "cc": "TPE",
+            "an": "Taoyuan Airport",
+            "at": "T2",
+            "ac": "TPE",
+            "t": "a",
+            "color": "",
+            "coc": "TW"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T2",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Taipei"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Taipei",
+            "code": "TPE",
+            "acode": "TPE",
+            "pCode": "TPE",
+            "pAcode": "TPE",
+            "dt": "14:05",
+            "at": "06:00",
+            "asd": 1,
+            "tsd": 0,
+            "wt": 485,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "China Airlines",
+            "an": "CI003",
+            "ac": "CI",
+            "ft": 835,
+            "sh": false
+          },
+          {
+            "acn": "China Airlines",
+            "an": "CI521",
+            "ac": "CI",
+            "ft": 130,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-23"
+        ],
+        "fdateGmt8": [
+          "2024-01-22",
+          "2024-01-23"
+        ],
+        "ftime": [
+          "00:05",
+          "14:05"
+        ],
+        "ftimeGmt8": [
+          "16:05",
+          "14:05"
+        ],
+        "adate": [
+          "2024-01-23",
+          "2024-01-23"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-23"
+        ],
+        "atime": [
+          "06:00",
+          "16:15"
+        ],
+        "atimeGmt8": [
+          "06:00",
+          "16:15"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "K"
+        ],
+        "avg": 866,
+        "avgtax": 664,
+        "p": 47,
+        "sp": 4723,
+        "tp": 6156,
+        "fsp": 664,
+        "ftax": 202,
+        "fstp": 866,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1450,
+        "rt": 9,
+        "t": null,
+        "asd": 1,
+        "og": "CORE~20240102134342|6109^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^CI0003_20240122/CI0521_20240123^NORMAL",
+        "sh": false,
+        "rType": "1T",
+        "eps": [
+          {
+            "cc": "77W",
+            "cn": "Boeing 777-300ER",
+            "dp": null,
+            "mt": 3,
+            "st": 340
+          },
+          {
+            "cc": "333",
+            "cn": "Airbus A330-300",
+            "dp": null,
+            "mt": 3,
+            "st": 260
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "GTHTCTH",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "CI",
+        "merchantId": "144"
+      },
+      {
+        "it": 1,
+        "flightKey": "SQ031D22SQ8430D24",
+        "dt": "09:40",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "I",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Singapore",
+            "cc": "SIN",
+            "an": "Changi Airport",
+            "at": "T1",
+            "ac": "SIN",
+            "t": "a",
+            "color": "",
+            "coc": "SG"
+          }
+        ],
+        "at": "09:30",
+        "aants": [
+          {
+            "cn": "Singapore",
+            "cc": "SIN",
+            "an": "Changi Airport",
+            "at": "",
+            "ac": "SIN",
+            "t": "a",
+            "color": "",
+            "coc": "SG"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T1",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Singapore"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Singapore",
+            "code": "SIN",
+            "acode": "SIN",
+            "pCode": "SIN",
+            "pAcode": "SIN",
+            "dt": "05:30",
+            "at": "19:05",
+            "asd": 1,
+            "tsd": 1,
+            "wt": 625,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "Singapore Airlines",
+            "an": "SQ031",
+            "ac": "SQ",
+            "ft": 1045,
+            "sh": false
+          },
+          {
+            "acn": "Singapore Airlines",
+            "an": "SQ8430",
+            "ac": "SQ",
+            "ft": 240,
+            "sh": true,
+            "ofn": "TR100",
+            "oacc": "TR",
+            "oacn": "Scoot"
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-24"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "ftime": [
+          "09:40",
+          "05:30"
+        ],
+        "ftimeGmt8": [
+          "01:40",
+          "05:30"
+        ],
+        "adate": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "atime": [
+          "19:05",
+          "09:30"
+        ],
+        "atimeGmt8": [
+          "19:05",
+          "09:30"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "W"
+        ],
+        "avg": 1041,
+        "avgtax": 981,
+        "p": 104,
+        "sp": 6977,
+        "tp": 7400,
+        "fsp": 981,
+        "ftax": 60,
+        "fstp": 1041,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1910,
+        "rt": 9,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|7296^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^SQ0031_20240122/SQ8430_20240124^NORMAL",
+        "sh": true,
+        "rType": "TCPL",
+        "eps": [
+          {
+            "cc": "359",
+            "cn": "Airbus A350-900",
+            "dp": null,
+            "mt": 3,
+            "st": 310
+          },
+          {
+            "cc": "788",
+            "cn": "Boeing 787-8",
+            "dp": null,
+            "mt": 3,
+            "st": 210
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "GTHTCTH",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "SQ",
+        "merchantId": "144"
+      },
+      {
+        "it": 1,
+        "flightKey": "SQ031D22SQ852D23",
+        "dt": "09:40",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "I",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Singapore",
+            "cc": "SIN",
+            "an": "Changi Airport",
+            "at": "T3",
+            "ac": "SIN",
+            "t": "a",
+            "color": "",
+            "coc": "SG"
+          }
+        ],
+        "at": "01:20",
+        "aants": [
+          {
+            "cn": "Singapore",
+            "cc": "SIN",
+            "an": "Changi Airport",
+            "at": "",
+            "ac": "SIN",
+            "t": "a",
+            "color": "",
+            "coc": "SG"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T2",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Singapore"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Singapore",
+            "code": "SIN",
+            "acode": "SIN",
+            "pCode": "SIN",
+            "pAcode": "SIN",
+            "dt": "21:15",
+            "at": "19:05",
+            "asd": 1,
+            "tsd": 0,
+            "wt": 130,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "Singapore Airlines",
+            "an": "SQ031",
+            "ac": "SQ",
+            "ft": 1045,
+            "sh": false
+          },
+          {
+            "acn": "Singapore Airlines",
+            "an": "SQ852",
+            "ac": "SQ",
+            "ft": 245,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-23"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-23"
+        ],
+        "ftime": [
+          "09:40",
+          "21:15"
+        ],
+        "ftimeGmt8": [
+          "01:40",
+          "21:15"
+        ],
+        "adate": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "atime": [
+          "19:05",
+          "01:20"
+        ],
+        "atimeGmt8": [
+          "19:05",
+          "01:20"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "W"
+        ],
+        "avg": 1135,
+        "avgtax": 1075,
+        "p": 113,
+        "sp": 7645,
+        "tp": 8068,
+        "fsp": 1075,
+        "ftax": 60,
+        "fstp": 1135,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1420,
+        "rt": 9,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|7955^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^SQ0031_20240122/SQ0852_20240123^NORMAL",
+        "sh": false,
+        "rType": "TCPL",
+        "eps": [
+          {
+            "cc": "359",
+            "cn": "Airbus A350-900",
+            "dp": null,
+            "mt": 3,
+            "st": 310
+          },
+          {
+            "cc": "359",
+            "cn": "Airbus A350-900",
+            "dp": null,
+            "mt": 3,
+            "st": 310
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "GTHTCTH",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "SQ",
+        "merchantId": "401"
+      },
+      {
+        "it": 1,
+        "flightKey": "QR738D22QR874D24",
+        "dt": "14:50",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "I",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Doha",
+            "cc": "DOH",
+            "an": "Hamad International Airport",
+            "at": "",
+            "ac": "DOH",
+            "t": "a",
+            "color": "",
+            "coc": "QA"
+          }
+        ],
+        "at": "14:25",
+        "aants": [
+          {
+            "cn": "Doha",
+            "cc": "DOH",
+            "an": "Hamad International Airport",
+            "at": "",
+            "ac": "DOH",
+            "t": "a",
+            "color": "",
+            "coc": "QA"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T2",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Doha"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Doha",
+            "code": "DOH",
+            "acode": "DOH",
+            "pCode": "DOH",
+            "pAcode": "DOH",
+            "dt": "02:10",
+            "at": "17:15",
+            "asd": 1,
+            "tsd": 1,
+            "wt": 535,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "Qatar Airways",
+            "an": "QR738",
+            "ac": "QR",
+            "ft": 925,
+            "sh": false
+          },
+          {
+            "acn": "Qatar Airways",
+            "an": "QR874",
+            "ac": "QR",
+            "ft": 435,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-24"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "ftime": [
+          "14:50",
+          "02:10"
+        ],
+        "ftimeGmt8": [
+          "06:50",
+          "07:10"
+        ],
+        "adate": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "atime": [
+          "17:15",
+          "14:25"
+        ],
+        "atimeGmt8": [
+          "22:15",
+          "14:25"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "N"
+        ],
+        "avg": 1197,
+        "avgtax": 1077,
+        "p": 114,
+        "sp": 7656,
+        "tp": 8505,
+        "fsp": 1077,
+        "ftax": 120,
+        "fstp": 1197,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1895,
+        "rt": 9,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|8391^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^QR0738_20240122/QR0874_20240124^NORMAL",
+        "sh": false,
+        "rType": "TCPL",
+        "eps": [
+          {
+            "cc": "351",
+            "cn": "Airbus A350-1000",
+            "dp": null,
+            "mt": 3,
+            "st": 369
+          },
+          {
+            "cc": "77W",
+            "cn": "Boeing 777-300ER",
+            "dp": null,
+            "mt": 3,
+            "st": 340
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "GTHTCTH",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "QR",
+        "merchantId": "728"
+      },
+      {
+        "it": 1,
+        "flightKey": "UA857D22FM9319D23",
+        "dt": "12:15",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "I",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Shanghai",
+            "cc": "SHA",
+            "an": "Pudong International Airport",
+            "at": "T1",
+            "ac": "PVG",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "at": "00:10",
+        "aants": [
+          {
+            "cn": "Shanghai",
+            "cc": "SHA",
+            "an": "Pudong International Airport",
+            "at": "T2",
+            "ac": "PVG",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T1",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Shanghai"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Shanghai",
+            "code": "SHA",
+            "acode": "PVG",
+            "pCode": "SHA",
+            "pAcode": "PVG",
+            "dt": "21:25",
+            "at": "18:35",
+            "asd": 1,
+            "tsd": 0,
+            "wt": 170,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "United Airlines",
+            "an": "UA857",
+            "ac": "UA",
+            "ft": 860,
+            "sh": false
+          },
+          {
+            "acn": "Shanghai Airlines",
+            "an": "FM9319",
+            "ac": "FM",
+            "ft": 165,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-23"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-23"
+        ],
+        "ftime": [
+          "12:15",
+          "21:25"
+        ],
+        "ftimeGmt8": [
+          "04:15",
+          "21:25"
+        ],
+        "adate": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "atime": [
+          "18:35",
+          "00:10"
+        ],
+        "atimeGmt8": [
+          "18:35",
+          "00:10"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "G",
+          "V"
+        ],
+        "avg": 1197,
+        "avgtax": 904,
+        "p": 0,
+        "sp": 6430,
+        "tp": 8511,
+        "fsp": 904,
+        "ftax": 293,
+        "fstp": 1197,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1195,
+        "rt": 9,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|8459^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^UA0857_20240122/FM9319_20240123^NORMAL",
+        "sh": false,
+        "rType": "1E",
+        "eps": [
+          {
+            "cc": "77W",
+            "cn": "Boeing 777-300ER",
+            "dp": null,
+            "mt": 3,
+            "st": 340
+          },
+          {
+            "cc": "73E",
+            "cn": "Boeing 737-500",
+            "dp": null,
+            "mt": 2,
+            "st": 100
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "HSQJD",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "UA",
+        "merchantId": "64"
+      },
+      {
+        "it": 1,
+        "flightKey": "UA888D22CA1329D23",
+        "dt": "10:50",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "I",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Beijing",
+            "cc": "BJS",
+            "an": "Capital International Airport ",
+            "at": "T3",
+            "ac": "PEK",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "at": "00:25",
+        "aants": [
+          {
+            "cn": "Beijing",
+            "cc": "BJS",
+            "an": "Capital International Airport ",
+            "at": "T3",
+            "ac": "PEK",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T1",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Beijing"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Beijing",
+            "code": "BJS",
+            "acode": "PEK",
+            "pCode": "BJS",
+            "pAcode": "PEK",
+            "dt": "21:00",
+            "at": "17:25",
+            "asd": 1,
+            "tsd": 0,
+            "wt": 215,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "United Airlines",
+            "an": "UA888",
+            "ac": "UA",
+            "ft": 875,
+            "sh": false
+          },
+          {
+            "acn": "Air China",
+            "an": "CA1329",
+            "ac": "CA",
+            "ft": 205,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-23"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-23"
+        ],
+        "ftime": [
+          "10:50",
+          "21:00"
+        ],
+        "ftimeGmt8": [
+          "02:50",
+          "21:00"
+        ],
+        "adate": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "atime": [
+          "17:25",
+          "00:25"
+        ],
+        "atimeGmt8": [
+          "17:25",
+          "00:25"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "G",
+          "W"
+        ],
+        "avg": 1210,
+        "avgtax": 904,
+        "p": 0,
+        "sp": 6430,
+        "tp": 8601,
+        "fsp": 904,
+        "ftax": 306,
+        "fstp": 1210,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1295,
+        "rt": 9,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|8590^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^UA0888_20240122/CA1329_20240123^NORMAL",
+        "sh": false,
+        "rType": "1T",
+        "eps": [
+          {
+            "cc": "77W",
+            "cn": "Boeing 777-300ER",
+            "dp": null,
+            "mt": 3,
+            "st": 340
+          },
+          {
+            "cc": "359",
+            "cn": "Airbus A350-900",
+            "dp": null,
+            "mt": 3,
+            "st": 310
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "HSQJD",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "UA",
+        "merchantId": "64"
+      },
+      {
+        "it": 1,
+        "flightKey": "OZ6347D22OZ203D22OZ369D24",
+        "dt": "17:30",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "T3",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Los Angeles",
+            "cc": "LAX",
+            "an": "Los Angeles International Airport",
+            "at": "B",
+            "ac": "LAX",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Seoul",
+            "cc": "SEL",
+            "an": "Incheon International Airport",
+            "at": "T1",
+            "ac": "ICN",
+            "t": "a",
+            "color": "",
+            "coc": "KR"
+          }
+        ],
+        "at": "11:30",
+        "aants": [
+          {
+            "cn": "Los Angeles",
+            "cc": "LAX",
+            "an": "Los Angeles International Airport",
+            "at": "T7",
+            "ac": "LAX",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Seoul",
+            "cc": "SEL",
+            "an": "Incheon International Airport",
+            "at": "T1",
+            "ac": "ICN",
+            "t": "a",
+            "color": "",
+            "coc": "KR"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T1",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Los Angeles",
+          "Seoul"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Los Angeles",
+            "code": "LAX",
+            "acode": "LAX",
+            "pCode": "LAX",
+            "pAcode": "LAX",
+            "dt": "23:00",
+            "at": "19:06",
+            "asd": 0,
+            "tsd": 0,
+            "wt": 234,
+            "sp": 0,
+            "tv": 0
+          },
+          {
+            "type": "t",
+            "name": "Seoul",
+            "code": "SEL",
+            "acode": "ICN",
+            "pCode": "SEL",
+            "pAcode": "ICN",
+            "dt": "08:30",
+            "at": "05:20",
+            "asd": 2,
+            "tsd": 0,
+            "wt": 190,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "Asiana Airlines",
+            "an": "OZ6347",
+            "ac": "OZ",
+            "ft": 96,
+            "sh": true,
+            "ofn": "UA1413",
+            "oacc": "UA",
+            "oacn": "United Airlines"
+          },
+          {
+            "acn": "Asiana Airlines",
+            "an": "OZ203",
+            "ac": "OZ",
+            "ft": 800,
+            "sh": false
+          },
+          {
+            "acn": "Asiana Airlines",
+            "an": "OZ369",
+            "ac": "OZ",
+            "ft": 240,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-22",
+          "2024-01-24"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "ftime": [
+          "17:30",
+          "23:00",
+          "08:30"
+        ],
+        "ftimeGmt8": [
+          "09:30",
+          "15:00",
+          "07:30"
+        ],
+        "adate": [
+          "2024-01-22",
+          "2024-01-24",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24",
+          "2024-01-24"
+        ],
+        "atime": [
+          "19:06",
+          "05:20",
+          "11:30"
+        ],
+        "atimeGmt8": [
+          "11:06",
+          "04:20",
+          "11:30"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "E"
+        ],
+        "avg": 1252,
+        "avgtax": 914,
+        "p": 65,
+        "sp": 6495,
+        "tp": 8899,
+        "fsp": 914,
+        "ftax": 338,
+        "fstp": 1252,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1560,
+        "rt": 4,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|8834^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^OZ6347_20240122/OZ0203_20240122/OZ0369_20240124^NORMAL",
+        "sh": true,
+        "rType": "TCPL",
+        "eps": [
+          {
+            "cc": "738",
+            "cn": "Boeing 737-800 ",
+            "dp": null,
+            "mt": 2,
+            "st": 140
+          },
+          {
+            "cc": "359",
+            "cn": "Airbus A350-900",
+            "dp": null,
+            "mt": 3,
+            "st": 310
+          },
+          {
+            "cc": "32Q",
+            "cn": "A321 NEO",
+            "dp": null,
+            "mt": 2,
+            "st": 192
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "GTHTCTH",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "OZ",
+        "merchantId": "839"
+      },
+      {
+        "it": 1,
+        "flightKey": "EK226D22EK362D24",
+        "dt": "15:40",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "I",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Dubai",
+            "cc": "DXB",
+            "an": "Dubai International Airport",
+            "at": "T3",
+            "ac": "DXB",
+            "t": "a",
+            "color": "",
+            "coc": "AE"
+          }
+        ],
+        "at": "21:45",
+        "aants": [
+          {
+            "cn": "Dubai",
+            "cc": "DXB",
+            "an": "Dubai International Airport",
+            "at": "T3",
+            "ac": "DXB",
+            "t": "a",
+            "color": "",
+            "coc": "AE"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T1",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Dubai"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Dubai",
+            "code": "DXB",
+            "acode": "DXB",
+            "pCode": "DXB",
+            "pAcode": "DXB",
+            "dt": "10:50",
+            "at": "19:25",
+            "asd": 1,
+            "tsd": 1,
+            "wt": 925,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "Emirates Airline",
+            "an": "EK226",
+            "ac": "EK",
+            "ft": 945,
+            "sh": false
+          },
+          {
+            "acn": "Emirates Airline",
+            "an": "EK362",
+            "ac": "EK",
+            "ft": 415,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-24"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "ftime": [
+          "15:40",
+          "10:50"
+        ],
+        "ftimeGmt8": [
+          "07:40",
+          "14:50"
+        ],
+        "adate": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "atime": [
+          "19:25",
+          "21:45"
+        ],
+        "atimeGmt8": [
+          "23:25",
+          "21:45"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "K"
+        ],
+        "avg": 1339,
+        "avgtax": 1004,
+        "p": 86,
+        "sp": 7139,
+        "tp": 9519,
+        "fsp": 1004,
+        "ftax": 335,
+        "fstp": 1339,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 2285,
+        "rt": 9,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|9448^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^EK0226_20240122/EK0362_20240124^NORMAL",
+        "sh": false,
+        "rType": "1T",
+        "eps": [
+          {
+            "cc": "388",
+            "cn": "Airbus A380-800 ",
+            "dp": null,
+            "mt": 3,
+            "st": 490
+          },
+          {
+            "cc": "388",
+            "cn": "Airbus A380-800 ",
+            "dp": null,
+            "mt": 3,
+            "st": 490
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "GTHTCTH",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "EK",
+        "merchantId": "145"
+      },
+      {
+        "it": 1,
+        "flightKey": "SQ033D22SQ850D24",
+        "dt": "20:15",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "I",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Singapore",
+            "cc": "SIN",
+            "an": "Changi Airport",
+            "at": "T3",
+            "ac": "SIN",
+            "t": "a",
+            "color": "",
+            "coc": "SG"
+          }
+        ],
+        "at": "12:10",
+        "aants": [
+          {
+            "cn": "Singapore",
+            "cc": "SIN",
+            "an": "Changi Airport",
+            "at": "",
+            "ac": "SIN",
+            "t": "a",
+            "color": "",
+            "coc": "SG"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T2",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Singapore"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Singapore",
+            "code": "SIN",
+            "acode": "SIN",
+            "pCode": "SIN",
+            "pAcode": "SIN",
+            "dt": "08:05",
+            "at": "05:45",
+            "asd": 2,
+            "tsd": 0,
+            "wt": 140,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "Singapore Airlines",
+            "an": "SQ033",
+            "ac": "SQ",
+            "ft": 1050,
+            "sh": false
+          },
+          {
+            "acn": "Singapore Airlines",
+            "an": "SQ850",
+            "ac": "SQ",
+            "ft": 245,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-24"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "ftime": [
+          "20:15",
+          "08:05"
+        ],
+        "ftimeGmt8": [
+          "12:15",
+          "08:05"
+        ],
+        "adate": [
+          "2024-01-24",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-24",
+          "2024-01-24"
+        ],
+        "atime": [
+          "05:45",
+          "12:10"
+        ],
+        "atimeGmt8": [
+          "05:45",
+          "12:10"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "S",
+          "Y"
+        ],
+        "ccs": [
+          "P",
+          "E"
+        ],
+        "avg": 1815,
+        "avgtax": 1775,
+        "p": 572,
+        "sp": 12623,
+        "tp": 12903,
+        "fsp": 1775,
+        "ftax": 40,
+        "fstp": 1815,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1435,
+        "rt": 9,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|12716^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^SQ0033_20240122/SQ0850_20240124^NORMAL",
+        "sh": false,
+        "rType": "1T",
+        "eps": [
+          {
+            "cc": "359",
+            "cn": "Airbus A350-900",
+            "dp": null,
+            "mt": 3,
+            "st": 310
+          },
+          {
+            "cc": "359",
+            "cn": "Airbus A350-900",
+            "dp": null,
+            "mt": 3,
+            "st": 310
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "GTHTCTH",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "SQ",
+        "merchantId": "792"
+      },
+      {
+        "it": 1,
+        "flightKey": "SQ033D22SQ852D24",
+        "dt": "20:15",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "I",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Singapore",
+            "cc": "SIN",
+            "an": "Changi Airport",
+            "at": "T3",
+            "ac": "SIN",
+            "t": "a",
+            "color": "",
+            "coc": "SG"
+          }
+        ],
+        "at": "01:20",
+        "aants": [
+          {
+            "cn": "Singapore",
+            "cc": "SIN",
+            "an": "Changi Airport",
+            "at": "",
+            "ac": "SIN",
+            "t": "a",
+            "color": "",
+            "coc": "SG"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T2",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Singapore"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Singapore",
+            "code": "SIN",
+            "acode": "SIN",
+            "pCode": "SIN",
+            "pAcode": "SIN",
+            "dt": "21:15",
+            "at": "05:45",
+            "asd": 2,
+            "tsd": 0,
+            "wt": 930,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "Singapore Airlines",
+            "an": "SQ033",
+            "ac": "SQ",
+            "ft": 1050,
+            "sh": false
+          },
+          {
+            "acn": "Singapore Airlines",
+            "an": "SQ852",
+            "ac": "SQ",
+            "ft": 245,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-24"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "ftime": [
+          "20:15",
+          "21:15"
+        ],
+        "ftimeGmt8": [
+          "12:15",
+          "21:15"
+        ],
+        "adate": [
+          "2024-01-24",
+          "2024-01-25"
+        ],
+        "adateGmt8": [
+          "2024-01-24",
+          "2024-01-25"
+        ],
+        "atime": [
+          "05:45",
+          "01:20"
+        ],
+        "atimeGmt8": [
+          "05:45",
+          "01:20"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "S",
+          "Y"
+        ],
+        "ccs": [
+          "P",
+          "E"
+        ],
+        "avg": 1815,
+        "avgtax": 1775,
+        "p": 572,
+        "sp": 12623,
+        "tp": 12903,
+        "fsp": 1775,
+        "ftax": 40,
+        "fstp": 1815,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 2225,
+        "rt": 9,
+        "t": null,
+        "asd": 3,
+        "og": "CORE~20240102134342|12716^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^SQ0033_20240122/SQ0852_20240124^NORMAL",
+        "sh": false,
+        "rType": "1T",
+        "eps": [
+          {
+            "cc": "359",
+            "cn": "Airbus A350-900",
+            "dp": null,
+            "mt": 3,
+            "st": 310
+          },
+          {
+            "cc": "359",
+            "cn": "Airbus A350-900",
+            "dp": null,
+            "mt": 3,
+            "st": 310
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "GTHTCTH",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "SQ",
+        "merchantId": "792"
+      },
+      {
+        "it": 1,
+        "flightKey": "JL001D22JL087D24",
+        "dt": "12:55",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "I",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Tokyo",
+            "cc": "TYO",
+            "an": "Haneda Airport",
+            "at": "T3",
+            "ac": "HND",
+            "t": "a",
+            "color": "",
+            "coc": "JP"
+          }
+        ],
+        "at": "13:05",
+        "aants": [
+          {
+            "cn": "Tokyo",
+            "cc": "TYO",
+            "an": "Haneda Airport",
+            "at": "T3",
+            "ac": "HND",
+            "t": "a",
+            "color": "",
+            "coc": "JP"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T2",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Tokyo"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Tokyo",
+            "code": "TYO",
+            "acode": "HND",
+            "pCode": "TYO",
+            "pAcode": "HND",
+            "dt": "08:40",
+            "at": "17:20",
+            "asd": 1,
+            "tsd": 1,
+            "wt": 920,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "Japan Airlines",
+            "an": "JL001",
+            "ac": "JL",
+            "ft": 685,
+            "sh": false
+          },
+          {
+            "acn": "Japan Airlines",
+            "an": "JL087",
+            "ac": "JL",
+            "ft": 325,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-24"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "ftime": [
+          "12:55",
+          "08:40"
+        ],
+        "ftimeGmt8": [
+          "04:55",
+          "07:40"
+        ],
+        "adate": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "atime": [
+          "17:20",
+          "13:05"
+        ],
+        "atimeGmt8": [
+          "16:20",
+          "13:05"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "V"
+        ],
+        "avg": 1985,
+        "avgtax": 1706,
+        "p": 210,
+        "sp": 12129,
+        "tp": 14109,
+        "fsp": 1706,
+        "ftax": 279,
+        "fstp": 1985,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1930,
+        "rt": 9,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|13988^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^JL0001_20240122/JL0087_20240124^NORMAL",
+        "sh": false,
+        "rType": "1T",
+        "eps": [
+          {
+            "cc": "789",
+            "cn": "Boeing 787-9",
+            "dp": null,
+            "mt": 3,
+            "st": 322
+          },
+          {
+            "cc": "788",
+            "cn": "Boeing 787-8",
+            "dp": null,
+            "mt": 3,
+            "st": 210
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "GTHTCTH",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "JL",
+        "merchantId": "145"
+      },
+      {
+        "it": 1,
+        "flightKey": "EK226D22EK7435D24",
+        "dt": "15:40",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "I",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Dubai",
+            "cc": "DXB",
+            "an": "Dubai International Airport",
+            "at": "T1",
+            "ac": "DXB",
+            "t": "a",
+            "color": "",
+            "coc": "AE"
+          }
+        ],
+        "at": "12:50",
+        "aants": [
+          {
+            "cn": "Dubai",
+            "cc": "DXB",
+            "an": "Dubai International Airport",
+            "at": "T3",
+            "ac": "DXB",
+            "t": "a",
+            "color": "",
+            "coc": "AE"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T2",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Dubai"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Dubai",
+            "code": "DXB",
+            "acode": "DXB",
+            "pCode": "DXB",
+            "pAcode": "DXB",
+            "dt": "01:55",
+            "at": "19:25",
+            "asd": 1,
+            "tsd": 1,
+            "wt": 390,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "Emirates Airline",
+            "an": "EK226",
+            "ac": "EK",
+            "ft": 945,
+            "sh": false
+          },
+          {
+            "acn": "Emirates Airline",
+            "an": "EK7435",
+            "ac": "EK",
+            "ft": 415,
+            "sh": true,
+            "ofn": "CZ384",
+            "oacc": "CZ",
+            "oacn": "China Southern Airlines"
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-24"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "ftime": [
+          "15:40",
+          "01:55"
+        ],
+        "ftimeGmt8": [
+          "07:40",
+          "05:55"
+        ],
+        "adate": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "atime": [
+          "19:25",
+          "12:50"
+        ],
+        "atimeGmt8": [
+          "23:25",
+          "12:50"
+        ],
+        "cb": "Y",
+        "cbs": [
+          "Y"
+        ],
+        "ccs": [
+          "Y"
+        ],
+        "avg": 7689,
+        "avgtax": 7378,
+        "p": 520,
+        "sp": 52483,
+        "tp": 54690,
+        "fsp": 7378,
+        "ftax": 311,
+        "fstp": 7689,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1750,
+        "rt": 7,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|54170^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^EK0226_20240122/EK7435_20240124^NORMAL",
+        "sh": true,
+        "rType": "TCPL",
+        "eps": [
+          {
+            "cc": "388",
+            "cn": "Airbus A380-800 ",
+            "dp": null,
+            "mt": 3,
+            "st": 490
+          },
+          {
+            "cc": "77W",
+            "cn": "Boeing 777-300ER",
+            "dp": null,
+            "mt": 3,
+            "st": 340
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "GTHTCTH",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "EK",
+        "merchantId": "284"
+      },
+      {
+        "it": 1,
+        "flightKey": "CZ1199D22CZ328D22",
+        "dt": "15:35",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "T2",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Los Angeles",
+            "cc": "LAX",
+            "an": "Los Angeles International Airport",
+            "at": "B",
+            "ac": "LAX",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          }
+        ],
+        "at": "05:40",
+        "aants": [
+          {
+            "cn": "Los Angeles",
+            "cc": "LAX",
+            "an": "Los Angeles International Airport",
+            "at": "T3",
+            "ac": "LAX",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T2",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Los Angeles"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Los Angeles",
+            "code": "LAX",
+            "acode": "LAX",
+            "pCode": "LAX",
+            "pAcode": "LAX",
+            "dt": "21:35",
+            "at": "17:08",
+            "asd": 0,
+            "tsd": 0,
+            "wt": 267,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "China Southern Airlines",
+            "an": "CZ1199",
+            "ac": "CZ",
+            "ft": 93,
+            "sh": true,
+            "ofn": "DL1481",
+            "oacc": "DL",
+            "oacn": "Delta Air Lines"
+          },
+          {
+            "acn": "China Southern Airlines",
+            "an": "CZ328",
+            "ac": "CZ",
+            "ft": 965,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-22"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-23"
+        ],
+        "ftime": [
+          "15:35",
+          "21:35"
+        ],
+        "ftimeGmt8": [
+          "07:35",
+          "13:35"
+        ],
+        "adate": [
+          "2024-01-22",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "atime": [
+          "17:08",
+          "05:40"
+        ],
+        "atimeGmt8": [
+          "09:08",
+          "05:40"
+        ],
+        "cb": "C",
+        "cbs": [
+          "C"
+        ],
+        "ccs": [
+          "J",
+          "C"
+        ],
+        "avg": 10003,
+        "avgtax": 9667,
+        "p": 0,
+        "sp": 68763,
+        "tp": 71149,
+        "fsp": 9667,
+        "ftax": 336,
+        "fstp": 10003,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1325,
+        "rt": 6,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|71149^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^CZ1199_20240122/CZ0328_20240122^NORMAL",
+        "sh": true,
+        "rType": "1T",
+        "eps": [
+          {
+            "cc": "319",
+            "cn": "Airbus A319",
+            "dp": null,
+            "mt": 2,
+            "st": 110
+          },
+          {
+            "cc": "773",
+            "cn": "Boeing 777-300",
+            "dp": null,
+            "mt": 3,
+            "st": 280
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "SWTH",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "CZ",
+        "merchantId": "176"
+      },
+      {
+        "it": 1,
+        "flightKey": "UA930D22CZ304D23",
+        "dt": "17:25",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "I",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "London",
+            "cc": "LON",
+            "an": "Heathrow Airport",
+            "at": "T4",
+            "ac": "LHR",
+            "t": "a",
+            "color": "",
+            "coc": "GB"
+          }
+        ],
+        "at": "17:15",
+        "aants": [
+          {
+            "cn": "London",
+            "cc": "LON",
+            "an": "Heathrow Airport",
+            "at": "T2",
+            "ac": "LHR",
+            "t": "a",
+            "color": "",
+            "coc": "GB"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T2",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "London"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "London",
+            "code": "LON",
+            "acode": "LHR",
+            "pCode": "LON",
+            "pAcode": "LHR",
+            "dt": "21:10",
+            "at": "12:00",
+            "asd": 1,
+            "tsd": 0,
+            "wt": 550,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "United Airlines",
+            "an": "UA930",
+            "ac": "UA",
+            "ft": 635,
+            "sh": false
+          },
+          {
+            "acn": "China Southern Airlines",
+            "an": "CZ304",
+            "ac": "CZ",
+            "ft": 725,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-23"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "ftime": [
+          "17:25",
+          "21:10"
+        ],
+        "ftimeGmt8": [
+          "09:25",
+          "05:10"
+        ],
+        "adate": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "atime": [
+          "12:00",
+          "17:15"
+        ],
+        "atimeGmt8": [
+          "20:00",
+          "17:15"
+        ],
+        "cb": "C",
+        "cbs": [
+          "C"
+        ],
+        "ccs": [
+          "J",
+          "I"
+        ],
+        "avg": 11656,
+        "avgtax": 10858,
+        "p": 765,
+        "sp": 77235,
+        "tp": 82909,
+        "fsp": 10858,
+        "ftax": 798,
+        "fstp": 11656,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1910,
+        "rt": 9,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|82144^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^UA0930_20240122/CZ0304_20240123^NORMAL",
+        "sh": false,
+        "rType": "GW",
+        "eps": [
+          {
+            "cc": "777",
+            "cn": "Boeing 777",
+            "dp": null,
+            "mt": 3,
+            "st": 280
+          },
+          {
+            "cc": "789",
+            "cn": "Boeing 787-9",
+            "dp": null,
+            "mt": 3,
+            "st": 322
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "SWQJD",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "UA",
+        "merchantId": "264"
+      },
+      {
+        "it": 1,
+        "flightKey": "UA901D22CZ304D23",
+        "dt": "13:00",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "I",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "London",
+            "cc": "LON",
+            "an": "Heathrow Airport",
+            "at": "T4",
+            "ac": "LHR",
+            "t": "a",
+            "color": "",
+            "coc": "GB"
+          }
+        ],
+        "at": "17:15",
+        "aants": [
+          {
+            "cn": "London",
+            "cc": "LON",
+            "an": "Heathrow Airport",
+            "at": "T2",
+            "ac": "LHR",
+            "t": "a",
+            "color": "",
+            "coc": "GB"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T2",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "London"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "London",
+            "code": "LON",
+            "acode": "LHR",
+            "pCode": "LON",
+            "pAcode": "LHR",
+            "dt": "21:10",
+            "at": "07:30",
+            "asd": 1,
+            "tsd": 0,
+            "wt": 820,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "United Airlines",
+            "an": "UA901",
+            "ac": "UA",
+            "ft": 630,
+            "sh": false
+          },
+          {
+            "acn": "China Southern Airlines",
+            "an": "CZ304",
+            "ac": "CZ",
+            "ft": 725,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-23"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "ftime": [
+          "13:00",
+          "21:10"
+        ],
+        "ftimeGmt8": [
+          "05:00",
+          "05:10"
+        ],
+        "adate": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "atime": [
+          "07:30",
+          "17:15"
+        ],
+        "atimeGmt8": [
+          "15:30",
+          "17:15"
+        ],
+        "cb": "C",
+        "cbs": [
+          "C"
+        ],
+        "ccs": [
+          "J",
+          "I"
+        ],
+        "avg": 11656,
+        "avgtax": 10858,
+        "p": 765,
+        "sp": 77235,
+        "tp": 82909,
+        "fsp": 10858,
+        "ftax": 798,
+        "fstp": 11656,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 2175,
+        "rt": 7,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|82144^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^UA0901_20240122/CZ0304_20240123^NORMAL",
+        "sh": false,
+        "rType": "GW",
+        "eps": [
+          {
+            "cc": "777",
+            "cn": "Boeing 777",
+            "dp": null,
+            "mt": 3,
+            "st": 280
+          },
+          {
+            "cc": "789",
+            "cn": "Boeing 787-9",
+            "dp": null,
+            "mt": 3,
+            "st": 322
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "SWQJD",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "UA",
+        "merchantId": "264"
+      },
+      {
+        "it": 1,
+        "flightKey": "UA058D22CZ332D23",
+        "dt": "13:25",
+        "dants": [
+          {
+            "cn": "San Francisco",
+            "cc": "SFO",
+            "an": "San Francisco International Airport",
+            "at": "",
+            "ac": "SFO",
+            "t": "a",
+            "color": "",
+            "coc": "US"
+          },
+          {
+            "cn": "Frankfurt",
+            "cc": "FRA",
+            "an": "Frankfurt Airport",
+            "at": "T2",
+            "ac": "FRA",
+            "t": "a",
+            "color": "",
+            "coc": "DE"
+          }
+        ],
+        "at": "08:25",
+        "aants": [
+          {
+            "cn": "Frankfurt",
+            "cc": "FRA",
+            "an": "Frankfurt Airport",
+            "at": "",
+            "ac": "FRA",
+            "t": "a",
+            "color": "",
+            "coc": "DE"
+          },
+          {
+            "cn": "Guangzhou",
+            "cc": "CAN",
+            "an": "Baiyun International Airport",
+            "at": "T2",
+            "ac": "CAN",
+            "t": "a",
+            "color": "",
+            "coc": "CN"
+          }
+        ],
+        "tps": [
+          "Frankfurt"
+        ],
+        "sps": [],
+        "stps": [
+          {
+            "type": "t",
+            "name": "Frankfurt",
+            "code": "FRA",
+            "acode": "FRA",
+            "pCode": "FRA",
+            "pAcode": "FRA",
+            "dt": "13:55",
+            "at": "09:35",
+            "asd": 1,
+            "tsd": 0,
+            "wt": 260,
+            "sp": 0,
+            "tv": 0
+          }
+        ],
+        "acs": [
+          {
+            "acn": "United Airlines",
+            "an": "UA058",
+            "ac": "UA",
+            "ft": 670,
+            "sh": false
+          },
+          {
+            "acn": "China Southern Airlines",
+            "an": "CZ332",
+            "ac": "CZ",
+            "ft": 690,
+            "sh": false
+          }
+        ],
+        "fdate": [
+          "2024-01-22",
+          "2024-01-23"
+        ],
+        "fdateGmt8": [
+          "2024-01-23",
+          "2024-01-23"
+        ],
+        "ftime": [
+          "13:25",
+          "13:55"
+        ],
+        "ftimeGmt8": [
+          "05:25",
+          "20:55"
+        ],
+        "adate": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "adateGmt8": [
+          "2024-01-23",
+          "2024-01-24"
+        ],
+        "atime": [
+          "09:35",
+          "08:25"
+        ],
+        "atimeGmt8": [
+          "16:35",
+          "08:25"
+        ],
+        "cb": "C",
+        "cbs": [
+          "C"
+        ],
+        "ccs": [
+          "J",
+          "I"
+        ],
+        "avg": 11658,
+        "avgtax": 10858,
+        "p": 765,
+        "sp": 77235,
+        "tp": 82919,
+        "fsp": 10858,
+        "ftax": 800,
+        "fstp": 11658,
+        "ctp": 0,
+        "csp": 0,
+        "cfsp": 0,
+        "cftax": 0,
+        "cfstp": 0,
+        "itp": 0,
+        "reduced": false,
+        "tdt": 1620,
+        "rt": 9,
+        "t": null,
+        "asd": 2,
+        "og": "CORE~20240102134342|82154^OW_SFO/CAN/20240122_ADT-1|CHD-0|INF-0_Y|S|F|C_3319424961810663376_SIMPLE_643723582@-1568850063_V02^UA0058_20240122/CZ0332_20240123^NORMAL",
+        "sh": false,
+        "rType": "GW",
+        "eps": [
+          {
+            "cc": "77W",
+            "cn": "Boeing 777-300ER",
+            "dp": null,
+            "mt": 3,
+            "st": 340
+          },
+          {
+            "cc": "359",
+            "cn": "Airbus A350-900",
+            "dp": null,
+            "mt": 3,
+            "st": 310
+          }
+        ],
+        "isAHHD": false,
+        "gwTag": "",
+        "nTakeoff": false,
+        "productCode": "SWQJD",
+        "mtg": "",
+        "gwCouponAmount": 0,
+        "bgW": 0,
+        "tcc": "UA",
+        "merchantId": "264"
+      }
+    ],
+    "lowp": 4445,
+    "aLowp": 626,
+    "ext": {
+      "BUDDHA_SORT": null,
+      "USER_RATE": "0.14057580",
+      "SEARCHFRONT_CHECK_SYNC_RESULT": "{\"filteredPriceDetailMap\":{}}",
+      "REQUEST_UUID": "6784e104-c0c7-41d1-88ad-835d6dda3965",
+      "SHOW_MERCHANT": "false",
+      "MULTI_DATA_ANALYZE_STRING": "",
+      "BUDDHA_USER_TAG": null,
+      "HIDDEN_MERCHANT": true
+    },
+    "times": 1,
+    "directLowp": 0,
+    "dcf": true,
+    "acf": false
+  },
+  "g": "1704174262211-50682"
+}
