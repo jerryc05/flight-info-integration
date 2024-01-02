@@ -1,22 +1,23 @@
 # If you are in Mainland China
 Use
 ```sh
-npm --registry="http://mirrors.cloud.tencent.com/npm/"
+pnpm --registry="http://mirrors.cloud.tencent.com/npm/"
 ```
-instead of `npm` in the following commands.
+instead of `pnpm` in the following commands.
 
 # Install packages
 ```sh
-npm install
+pnpm i
 ```
 Or better, use `pnpm` instaead of `npm`.
 
 # Install browser
 ```sh
-npx playwright install firefox
+pnpm exec playwright install chromium
 ```
 
 # Run with
 ```sh
-npm start
+chrome --guest --remote-debugging-port=9222 --user-data-dir=/tmp/chrome-profile --no-first-run
+pnpm start
 ```

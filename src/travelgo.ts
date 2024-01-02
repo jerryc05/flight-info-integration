@@ -16,22 +16,28 @@ export type Ticket = {
 }
 
 export default {
-  travelgo_gen_url(args: { src: string; dst: string; departDate: Date }) {
+  gen_url(args: { src: string; dst: string; departDate: Date }) {
     return `https://www.travelgo.com/iflight/book1.html?para=0*${args.src}*${
       args.dst
-    }*${args.departDate.getFullYear()}-${args.departDate.getMonth()}-${args.departDate.getDate()}**Y*1*0*`
+    }*${args.departDate.getFullYear()}-${args.departDate
+      .getMonth()
+      .toString()
+      .padStart(2, '0')}-${args.departDate
+      .getDate()
+      .toString()
+      .padStart(2, '0')}**Y*1*0*`
   },
-  async travelgo(page: Page, url: string) {
+  async run(page: Page, url: string) {
     await page.goto(url)
     for (;;) {
       const resp = await page.waitForResponse(resp =>
-        resp.url().includes('/pciflightapi/ts/list'),
+        resp.url().endsWith('/pciflightapi/ts/list'),
       )
 
       let jsonResp: typeof SampleResponse
       try {
         jsonResp = await resp.json()
-        if (!Array.isArray(jsonResp.data.res)) continue
+        if (!jsonResp.data.res) continue
       } catch (e) {
         continue
       }

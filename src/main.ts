@@ -1,5 +1,7 @@
 import { strict, strictEqual } from 'assert'
-import { Page, firefox } from 'playwright-core'
+import { Page, chromium as browser_ } from 'playwright-core'
+
+import travelgo from './travelgo.js'
 
 type RoundTripTicket = {
   price: number
@@ -98,7 +100,8 @@ async function kayak(page: Page) {
 
   await page.goto(
     'https://www.kayak.com/flights/SFO-CAN,HAK,SHA/2024-01-22?sort=price_a&fs=cfc=1' /*carry on*/ +
-      ';stops=-2'/*nonstop+1stop*/+';bfc=1'/*checked bag*/,
+      ';stops=-2' /*nonstop+1stop*/ +
+      ';bfc=1' /*checked bag*/,
   )
 
   try {
@@ -328,20 +331,29 @@ async function ctrip(
 }
 
 export async function main() {
-  const browser = await firefox.launch({
-    headless: false,
-  })
+  const browser = await browser_.connectOverCDP('http://127.0.0.1:9222')
 
   const context = await browser.newContext({
     viewport: { width: 1080, height: 1080 },
   })
 
-  await Promise.allSettled([
-    kayak(await context.newPage()),
+  const allTickets = await Promise.all([
+    // kayak(await context.newPage()),
     // google(await context.newPage()),
     // ctrip(await context.newPage(), true, 'xmn', 'hak', new Date('2023-05-22')),
+    travelgo.run(
+      await context.newPage(),
+      travelgo.gen_url({
+        src: 'SFO',
+        dst: 'CAN',
+        departDate: new Date('2024-05-20'),
+      }),
+    ),
   ])
-  console.log('main: all backend tasks done')
+
+  console.dir(allTickets, {
+    depth: null,
+  })
 
   await context.close()
   await browser.close()
