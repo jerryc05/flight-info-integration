@@ -3,6 +3,7 @@ import { Page, chromium as browser_ } from 'playwright-core'
 
 import kayak from './kayak'
 import travelgo from './travelgo'
+import { GenUrlInfo } from './util'
 
 type RoundTripTicket = {
   price: number
@@ -331,6 +332,12 @@ async function ctrip(
   console.log(tickets)
 }
 
+const args: GenUrlInfo = {
+  srcs: ['SFO'],
+  dsts: ['CAN'],
+  departDate: new Date('2024-05-20'),
+}
+
 export async function main() {
   const browser = await browser_.connectOverCDP('http://127.0.0.1:9222')
 
@@ -341,18 +348,10 @@ export async function main() {
 
   const allTickets = await Promise.all([
     ...kayak
-      .gen_url({
-        srcs: ['SFO'],
-        dsts: ['CAN'],
-        departDate: new Date('2024-05-20'),
-      })
+      .gen_url(args)
       .map(async url => await kayak.run(await newContext(), url)),
     ...travelgo
-      .gen_url({
-        srcs: ['SFO'],
-        dsts: ['CAN'],
-        departDate: new Date('2024-05-20'),
-      })
+      .gen_url(args)
       .map(async url => await travelgo.run(await newContext(), url)),
   ])
 
