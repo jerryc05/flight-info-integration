@@ -350,9 +350,9 @@ export async function main() {
     ...kayak
       .gen_url(args)
       .map(async url => await kayak.run(await newContext(), url)),
-    ...travelgo
-      .gen_url(args)
-      .map(async url => await travelgo.run(await newContext(), url)),
+    // ...travelgo
+    //   .gen_url(args)
+    //   .map(async url => await travelgo.run(await newContext(), url)),
   ])
 
   console.dir(allTickets, {

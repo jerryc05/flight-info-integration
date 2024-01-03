@@ -32,22 +32,31 @@ export default {
     ])
     const page = await ctx.newPage()
     await page.goto(url)
-    for (;;) {
-      const resp = await page.waitForResponse(resp => {
-        if (resp.url().includes('travelgo.com/pciflightapi'))
-          console.log(resp.url(), resp.headers()['content-length'])
-        return resp.url().endsWith('/pciflightapi/ts/list')
-      })
+    console.log(url)
+    let result: Ticket[] = []
 
-      let jsonResp: typeof SampleResponse
-      try {
-        jsonResp = await resp.json()
-        if (!jsonResp.data.res) continue
-      } catch (e) {
-        continue
+    try {
+      for (;;) {
+        const resp = await page.waitForResponse(
+          resp => resp.url().endsWith('/pciflightapi/ts/list'),
+          {
+            timeout: 5000,
+          },
+        )
+
+        let jsonResp: typeof SampleResponse
+        try {
+          jsonResp = await resp.json()
+          if (!jsonResp.data.res) continue
+        } catch (e) {
+          continue
+        }
+        result = result.concat(processResponse(jsonResp, url))
       }
-      return processResponse(jsonResp, url)
+    } catch (e) {
+      console.log(e)
     }
+    return result
   },
 } as Service
 

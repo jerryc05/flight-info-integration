@@ -23,7 +23,35 @@ export default {
   },
   async run(ctx: BrowserContext, url: string) {
     const page = await ctx.newPage()
-    await page.goto(url)
+    const resp = await page.goto(url)
+    console.log(url)
+
+    if (resp) {
+      const textResp = await resp.text()
+      const textResps = textResp
+        .replaceAll("\\'", '\\"')
+        .split('\n')
+        .map(line => line.trim())
+
+      const earlyResult =
+        processHtml(
+          'reducer: ',
+          textResps,
+          (obj: any) => obj.initialState,
+          url,
+        ) ??
+        processHtml(
+          '</script><script id="__R9_HYDRATE_DATA__" type="application/json">',
+          textResps,
+          (obj: any) => obj.serverData,
+          url,
+        )
+
+      if (earlyResult) {
+        return earlyResult
+      }
+    }
+
     let result: Ticket[] = []
 
     try {
@@ -75,3 +103,22 @@ const processResponse = (
         arrivalAirport: seg.arrival.airport.displayName,
       })),
     }))
+
+function processHtml(
+  PREFIX: string,
+  textResps: string[],
+  jsonRespGetter: (obj: any) => any,
+  url: string,
+) {
+  const filteredTextResps = textResps.filter(line => line.startsWith(PREFIX))
+  for (const lineResp_ of filteredTextResps) {
+    let lineResp = lineResp_.substring(PREFIX.length)
+    while (!lineResp.endsWith('}'))
+      lineResp = lineResp.substring(0, lineResp.length - 1)
+    const jsonResp = jsonRespGetter(JSON.parse(lineResp))
+    console.log('jsonResp', jsonResp)
+    if (jsonResp.FlightResultsList) {
+      return processResponse(jsonResp, url)
+    }
+  }
+}
