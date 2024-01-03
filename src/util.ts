@@ -1,0 +1,29 @@
+import { BrowserContext } from 'playwright-core'
+
+export type Ticket = {
+  priceWithUrl: {
+    usdPrice: number
+    url: string
+  }[]
+  steps: {
+    airline: string
+    departLocalTimeIgnoreTz: Date
+    departAirport: string
+    arrivalLocalTimeIgnoreTz: Date
+    arrivalAirport: string
+  }[]
+}
+
+export type GenUrlInfo = {
+  srcs: string[]
+  dsts: string[]
+  departDate: Date
+  carryOn?: number
+  checkedBags?: number
+  stops?: 0 | 1 | true
+}
+
+export type Service = {
+  gen_url(args: GenUrlInfo): string[]
+  run(ctx: BrowserContext, url: string): Promise<Ticket[]>
+}

@@ -1,7 +1,8 @@
 import { strict, strictEqual } from 'assert'
 import { Page, chromium as browser_ } from 'playwright-core'
 
-import travelgo from './travelgo.js'
+import kayak from './kayak'
+import travelgo from './travelgo'
 
 type RoundTripTicket = {
   price: number
@@ -64,7 +65,7 @@ type KayakTicket = {
   }[]
 }
 
-async function kayak(page: Page) {
+async function kayak_(page: Page) {
   const tickets: KayakTicket[] = []
   const promises: Promise<void>[] = []
 
@@ -339,17 +340,20 @@ export async function main() {
     })
 
   const allTickets = await Promise.all([
-    // kayak(await context.newPage()),
-    // google(await context.newPage()),
-    // ctrip(await context.newPage(), true, 'xmn', 'hak', new Date('2023-05-22')),
-    travelgo.run(
-      await newContext(),
-      travelgo.gen_url({
-        src: 'SFO',
-        dst: 'CAN',
+    ...kayak
+      .gen_url({
+        srcs: ['SFO'],
+        dsts: ['CAN'],
         departDate: new Date('2024-05-20'),
-      }),
-    ),
+      })
+      .map(async url => await kayak.run(await newContext(), url)),
+    ...travelgo
+      .gen_url({
+        srcs: ['SFO'],
+        dsts: ['CAN'],
+        departDate: new Date('2024-05-20'),
+      })
+      .map(async url => await travelgo.run(await newContext(), url)),
   ])
 
   console.dir(allTickets, {
