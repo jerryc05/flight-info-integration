@@ -1,6 +1,6 @@
 import { BrowserContext } from 'playwright-core'
 
-import { GenUrlInfo, Service, Ticket } from '@/util'
+import { GenUrlInfo, Service, Ticket, getMyDate } from '@/util'
 
 import * as SampleResponse from './travelgo.json'
 
@@ -11,12 +11,12 @@ export default {
     for (const src of args.srcs)
       for (const dst of args.dsts)
         ans.push(
-          `https://www.travelgo.com/iflight/book1.html?para=0*${src}*${dst}*${args.departDate.getFullYear()}-${args.departDate
-            .getMonth()
-            .toString()
-            .padStart(2, '0')}-${args.departDate
-            .getDate()
-            .toString()
+          `https://www.travelgo.com/iflight/book1.html?para=0*${src}*${dst}*${
+            getMyDate(args.departDate).year
+          }-${getMyDate(args.departDate)
+            .month.toString()
+            .padStart(2, '0')}-${getMyDate(args.departDate)
+            .day.toString()
             .padStart(2, '0')}**Y*1*0*`,
         )
     return ans
@@ -56,6 +56,8 @@ export default {
     } catch (e) {
       console.log(e)
     }
+
+    ctx.close()
     return result
   },
 } as Service
@@ -76,10 +78,10 @@ const processResponse = (
       departLocalTimeIgnoreTz: new Date(
         `${ticket.fdate[idx]} ${ticket.ftime[idx]}`,
       ),
-      departAirport: dant.an,
+      departAirport: dant.ac,
       arrivalLocalTimeIgnoreTz: new Date(
         `${ticket.adate[idx]} ${ticket.atime[idx]}`,
       ),
-      arrivalAirport: ticket.aants[idx].an,
+      arrivalAirport: ticket.aants[idx].ac,
     })),
   }))

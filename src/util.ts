@@ -27,3 +27,9 @@ export type Service = {
   gen_url(args: GenUrlInfo): string[]
   run(ctx: BrowserContext, url: string): Promise<Ticket[]>
 }
+
+export const getMyDate = (date: Date) => ({
+  year: date.getFullYear(),
+  month: date.getUTCMonth() + 1,
+  day: date.getUTCDate(),
+})

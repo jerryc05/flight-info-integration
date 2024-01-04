@@ -1,6 +1,6 @@
 import { BrowserContext } from 'playwright-core'
 
-import { GenUrlInfo, Service, Ticket } from '@/util'
+import { GenUrlInfo, Service, Ticket, getMyDate } from '@/util'
 
 import * as FlightSearchPollAction from './FlightSearchPollAction.json'
 
@@ -8,12 +8,12 @@ export default {
   gen_url(args: GenUrlInfo) {
     let url = `https://www.kayak.com/flights/${args.srcs.join(
       ',',
-    )}-${args.dsts.join(',')}/${args.departDate.getFullYear()}-${args.departDate
-      .getMonth()
-      .toString()
-      .padStart(2, '0')}-${args.departDate
-      .getDate()
-      .toString()
+    )}-${args.dsts.join(',')}/${getMyDate(args.departDate).year}-${getMyDate(
+      args.departDate,
+    )
+      .month.toString()
+      .padStart(2, '0')}-${getMyDate(args.departDate)
+      .day.toString()
       .padStart(2, '0')}?sort=price_a&`
     if (args.stops != null && args.stops !== true)
       url += `stops=${args.stops == 0 ? 0 : '-2'};`
@@ -73,7 +73,8 @@ export default {
       console.error(e)
     }
 
-    return [{} as Ticket]
+    ctx.close()
+    return result
   },
 } as Service
 
@@ -98,9 +99,9 @@ const processResponse = (
       steps: result.legs[0].segments.map(seg => ({
         airline: `${seg.airline.code}${seg.flightNumber}`,
         departLocalTimeIgnoreTz: new Date(seg.departure.isoDateTimeLocal),
-        departAirport: seg.departure.airport.displayName,
+        departAirport: seg.departure.airport.code,
         arrivalLocalTimeIgnoreTz: new Date(seg.arrival.isoDateTimeLocal),
-        arrivalAirport: seg.arrival.airport.displayName,
+        arrivalAirport: seg.arrival.airport.code,
       })),
     }))
 
@@ -116,7 +117,6 @@ function processHtml(
     while (!lineResp.endsWith('}'))
       lineResp = lineResp.substring(0, lineResp.length - 1)
     const jsonResp = jsonRespGetter(JSON.parse(lineResp))
-    console.log('jsonResp', jsonResp)
     if (jsonResp.FlightResultsList) {
       return processResponse(jsonResp, url)
     }

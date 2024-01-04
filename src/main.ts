@@ -359,8 +359,7 @@ export async function main() {
     depth: null,
   })
 
-  // await context.close()
-  // await browser.close()
+  browser.close()
 }
 
 main()
