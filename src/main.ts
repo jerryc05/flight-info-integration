@@ -1,9 +1,10 @@
 import { strict, strictEqual } from 'assert'
 import { Page, chromium as browser_ } from 'playwright-core'
 
-import kayak from './kayak'
-import travelgo from './travelgo'
-import { GenUrlInfo } from './util'
+import google from '@/google'
+import kayak from '@/kayak'
+import travelgo from '@/travelgo'
+import { GenUrlInfo } from '@/util'
 
 type RoundTripTicket = {
   price: number
@@ -274,7 +275,7 @@ async function kayak_(page: Page) {
   // allTickets.forEach((x) => console.log(x));
 }
 
-async function google(page: Page) {
+async function google2(page: Page) {
   await page.goto('https://www.google.com/travel/flights')
 
   page.waitForSelector('input')
@@ -345,6 +346,9 @@ export async function main() {
     browser.newContext({
       viewport: { width: 1080, height: 1080 },
     })
+
+  // google.run(await newContext(), args)
+  // return
 
   const allTickets = (
     await Promise.all([
