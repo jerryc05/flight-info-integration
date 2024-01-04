@@ -346,14 +346,18 @@ export async function main() {
       viewport: { width: 1080, height: 1080 },
     })
 
-  const allTickets = await Promise.all([
-    ...kayak
-      .gen_url(args)
-      .map(async url => await kayak.run(await newContext(), url)),
-    ...travelgo
-      .gen_url(args)
-      .map(async url => await travelgo.run(await newContext(), url)),
-  ])
+  const allTickets = (
+    await Promise.all([
+      ...kayak
+        .gen_url(args)
+        .map(async url => await kayak.run(await newContext(), url)),
+      ...travelgo
+        .gen_url(args)
+        .map(async url => await travelgo.run(await newContext(), url)),
+    ])
+  )
+    .flat()
+    .sort(x => x.priceWithUrl[0].usdPrice)
 
   console.dir(allTickets, {
     depth: null,

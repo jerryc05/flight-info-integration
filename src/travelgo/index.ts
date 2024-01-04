@@ -76,11 +76,11 @@ const processResponse = (
     steps: ticket.dants.map((dant, idx) => ({
       airline: ticket.acs[idx].an,
       departLocalTimeIgnoreTz: new Date(
-        `${ticket.fdate[idx]} ${ticket.ftime[idx]}`,
+        `${ticket.fdate[idx]} ${ticket.ftime[idx]}Z`,
       ),
       departAirport: dant.ac,
       arrivalLocalTimeIgnoreTz: new Date(
-        `${ticket.adate[idx]} ${ticket.atime[idx]}`,
+        `${ticket.adate[idx]} ${ticket.atime[idx]}Z`,
       ),
       arrivalAirport: ticket.aants[idx].ac,
     })),

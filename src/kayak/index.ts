@@ -95,12 +95,13 @@ const processResponse = (
         .map(opt => ({
           usdPrice: opt.fees.rawPrice,
           url,
-        })),
+        }))
+        .sort(x => x.usdPrice),
       steps: result.legs[0].segments.map(seg => ({
         airline: `${seg.airline.code}${seg.flightNumber}`,
-        departLocalTimeIgnoreTz: new Date(seg.departure.isoDateTimeLocal),
+        departLocalTimeIgnoreTz: new Date(seg.departure.isoDateTimeLocal + 'Z'),
         departAirport: seg.departure.airport.code,
-        arrivalLocalTimeIgnoreTz: new Date(seg.arrival.isoDateTimeLocal),
+        arrivalLocalTimeIgnoreTz: new Date(seg.arrival.isoDateTimeLocal + 'Z'),
         arrivalAirport: seg.arrival.airport.code,
       })),
     }))
