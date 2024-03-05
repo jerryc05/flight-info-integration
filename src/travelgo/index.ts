@@ -1,10 +1,9 @@
 import { BrowserContext } from 'playwright-core'
 
-import { GenUrlInfo, Service, Ticket, getMyDate } from '@/util'
+import { GenUrlInfo, Service, Ticket1, getMyDate } from '@/util'
 
 import * as SampleResponse from './travelgo.json'
 
-// 北美同程
 export default {
   gen_url(args: GenUrlInfo) {
     const ans: string[] = []
@@ -12,10 +11,10 @@ export default {
       for (const dst of args.dsts)
         ans.push(
           `https://www.travelgo.com/iflight/book1.html?para=0*${src}*${dst}*${
-            getMyDate(args.departDate).year
-          }-${getMyDate(args.departDate)
+            getMyDate(args.departDates).year
+          }-${getMyDate(args.departDates)
             .month.toString()
-            .padStart(2, '0')}-${getMyDate(args.departDate)
+            .padStart(2, '0')}-${getMyDate(args.departDates)
             .day.toString()
             .padStart(2, '0')}**Y*1*0*`,
         )
@@ -33,7 +32,7 @@ export default {
     const page = await ctx.newPage()
     await page.goto(url)
     console.log(url)
-    let result: Ticket[] = []
+    let result: Ticket1[] = []
 
     try {
       for (;;) {
@@ -57,7 +56,7 @@ export default {
       console.log(e)
     }
 
-    ctx.close()
+    // ctx.close()
     return result
   },
 } as Service

@@ -10,5 +10,8 @@
   },
   "scripts": {
     "start": "tsx src/main.ts"
+  },
+  "dependencies": {
+    "node-html-parser": "^6.1.12"
   }
 }

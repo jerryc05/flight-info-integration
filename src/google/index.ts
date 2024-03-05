@@ -2,14 +2,14 @@ import * as assert from 'assert'
 import { BrowserContext, Page } from 'playwright-core'
 import { ElementHandleForTag } from 'playwright-core/types/structs'
 
-import { GenUrlInfo, Service2, Ticket, getMyDate } from '@/util'
+import { GenUrlInfo, Service2, getMyDate } from '@/util'
 
 export default {
   async run(
     ctx: Parameters<Service2['run']>[0],
     args: Parameters<Service2['run']>[1],
   ) {
-    const isOneway = args.returnDate == null
+    const isOneway = args.returnDates == null
     ctx.setExtraHTTPHeaders({
       'Accept-Language': 'en-US',
     })
@@ -27,7 +27,7 @@ export default {
         if ((await x.innerHTML()).trim() === onewayOrRoundtrip) spans.push(x)
       console.log(onewayOrRoundtrip, 'spans.length', spans.length)
 
-      if (spans.length == 0 || spans.length >= 3)
+      if (spans.length === 0 || spans.length >= 3)
         throw new Error(
           `Elements with text "${onewayOrRoundtrip}" has ${spans.length} elements`,
         )
@@ -42,7 +42,7 @@ export default {
     let inputs: ElementHandleForTag<any>[] = []
     {
       const waitStart = Date.now()
-      while (inputs.length != (isOneway ? 3 : 4)) {
+      while (inputs.length !== (isOneway ? 3 : 4)) {
         if (Date.now() - waitStart > 10000)
           throw new Error('Waited for inputs.length too long!')
         inputs = await visibleElemHandles(
@@ -71,7 +71,7 @@ export default {
     let searchBtn: ElementHandleForTag<any> | null = null
     {
       const filteredButtons = []
-      while (filteredButtons.length != 1) {
+      while (filteredButtons.length !== 1) {
         const buttons = await visibleElemHandles(
           await page.$$('span[jsname][aria-hidden]'),
         )
@@ -88,8 +88,8 @@ export default {
     }
 
     // date
-    await dateHelper(args.departDate, inputs[2], page)
-    if (!isOneway) await dateHelper(args.returnDate!, inputs[3], page)
+    await dateHelper(args.departDates, inputs[2], page)
+    if (!isOneway) await dateHelper(args.returnDates!, inputs[3], page)
 
     //search
     await searchBtn.click()
@@ -98,7 +98,6 @@ export default {
     await page.waitForLoadState('load')
 
     // sort by
-    
 
     return []
   },
@@ -127,7 +126,7 @@ async function srcDsrHelper(
   let uls: ElementHandleForTag<any>[] = []
   {
     const waitStart = Date.now()
-    while (uls.length != 1) {
+    while (uls.length !== 1) {
       if (Date.now() - waitStart > 10000)
         throw new Error(`Waited too long for ${hint} dropdown list!`)
       uls = await visibleElemHandles(await page.$$('ul'))

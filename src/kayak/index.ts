@@ -1,125 +1,125 @@
-import { BrowserContext } from 'playwright-core'
+import { HTMLElement, parse } from 'node-html-parser'
+import { BrowserContext, ElementHandle } from 'playwright-core'
 
-import { GenUrlInfo, Service, Ticket, getMyDate } from '@/util'
-
-import * as FlightSearchPollAction from './FlightSearchPollAction.json'
+import { GenUrlInfo, Service, Ticket2, getMyDate } from '@/util'
 
 export default {
   gen_url(args: GenUrlInfo) {
-    let url = `https://www.kayak.com/flights/${args.srcs.join(
-      ',',
-    )}-${args.dsts.join(',')}/${getMyDate(args.departDate).year}-${getMyDate(
-      args.departDate,
-    )
-      .month.toString()
-      .padStart(2, '0')}-${getMyDate(args.departDate)
-      .day.toString()
-      .padStart(2, '0')}?sort=price_a&`
-    if (args.stops != null && args.stops !== true)
-      url += `stops=${args.stops == 0 ? 0 : '-2'};`
-    if (args.carryOn != null) url += `fs=cfc=${args.carryOn};`
-    if (args.checkedBags != null) url += `bfc=${args.checkedBags};`
-    return [url]
+    const ans: string[] = []
+    for (const deptDate of args.departDates) {
+      // for (const retnDate of args.returnDates)
+      {
+        let url = `https://www.kayak.com/flights/${args.srcs.join(
+          ',',
+        )}-${args.dsts.join(',')}/${getMyDate(deptDate).year}-${getMyDate(
+          deptDate,
+        )
+          .month.toString()
+          .padStart(2, '0')}-${getMyDate(deptDate)
+          .day.toString()
+          .padStart(2, '0')}?sort=price_a&fs=`
+        if (args.stops != null && args.stops !== true)
+          url += `stops=${args.stops === 0 ? 0 : '-2'};`
+        if (args.carryOn != null) url += `cfc=${args.carryOn};`
+        if (args.checkedBags != null) url += `bfc=${args.checkedBags};`
+        ans.push(url)
+      }
+    }
+
+    return ans
   },
   async run(ctx: BrowserContext, url: string) {
-    const page = await ctx.newPage()
-    const resp = await page.goto(url)
-    console.log(url)
+    let html = ''
+    let pageUrl = new URL(url)
+    {
+      const page = await ctx.newPage()
+      console.log(url)
+      await page.goto(url)
 
-    if (resp) {
-      const textResp = await resp.text()
-      const textResps = textResp
-        .replaceAll("\\'", '\\"')
-        .split('\n')
-        .map(line => line.trim())
-
-      const earlyResult =
-        processHtml(
-          'reducer: ',
-          textResps,
-          (obj: any) => obj.initialState,
-          url,
-        ) ??
-        processHtml(
-          '</script><script id="__R9_HYDRATE_DATA__" type="application/json">',
-          textResps,
-          (obj: any) => obj.serverData,
-          url,
-        )
-
-      if (earlyResult) {
-        return earlyResult
+      try {
+        for (let i = 0; i < 10; i++) {
+          const loadMoreBtn = await page.waitForSelector(
+            'div.show-more-button',
+            {
+              timeout: 2000,
+            },
+          )
+          await loadMoreBtn.click()
+        }
+      } catch (e) {
+        // console.error(e)
       }
+
+      html = await page.content()
+      pageUrl = new URL(page.url())
+      page.close()
     }
 
-    let result: Ticket[] = []
+    //
+    //
+    //
+    //
+    //
 
-    try {
-      for (;;) {
-        const resp = await page.waitForResponse(
-          resp =>
-            resp
-              .url()
-              .includes('/s/horizon/flights/results/FlightSearchPollAction'),
-          {
-            timeout: 5000,
-          },
-        )
+    const document = parse(html)
 
-        const jsonResp = await resp.json()
-        result = result.concat(processResponse(jsonResp, url))
+    const allEl = document.querySelectorAll('div[data-resultid].nrc6')
+    const result: Ticket2[] = []
+
+    function parseTicketEl(x: HTMLElement) {
+      let usdPrice = -1
+      const price = x.querySelector('div[class$=-price-text]')
+      if (!price) return null
+      const priceText = price.innerText
+      usdPrice = parseFloat(priceText.replaceAll(/\$|,/g, ''))
+
+      let url = ''
+      const urlEl = x.querySelector('a[class$=-fclink]')
+      if (!urlEl) return null
+      const href = urlEl.getAttribute('href')
+      if (!href) return null
+      url = `${pageUrl.protocol}//${pageUrl.host}${href}`
+
+      let departAirport = ''
+      let arrivalAirport = ''
+      const deptArriApEls = x.querySelectorAll('span[class$=-ap-info]')
+      if (deptArriApEls.length <= 1) return null
+      departAirport = deptArriApEls[0].innerText
+      arrivalAirport = deptArriApEls[1].innerText
+
+      const modVariantDefaultEls = x.querySelectorAll(
+        'div[class$=-mod-variant-default]',
+      )
+
+      let stopAirports: string[] = []
+      for (const el of modVariantDefaultEls) {
+        const text = el.innerText
+        if (/^[A-Z]{3}(?:, [A-Z]{3})*$/.test(text)) {
+          stopAirports = text.split(', ')
+          break
+        }
       }
-    } catch (e) {
-      console.error(e)
+
+      let totalMinutes: number[] = []
+      for (const el of modVariantDefaultEls) {
+        let text = el.innerText
+        if (text.endsWith('m')) {
+          text = text.substring(0, text.length - 1)
+          totalMinutes = text.split('h').map(parseFloat)
+          break
+        }
+      }
+
+      if (stopAirports.length === 0 || totalMinutes.length === 0) return null
+      return {
+        priceWithUrl: { usdPrice, url },
+        departAirport,
+        arrivalAirport,
+        stopAirports,
+        totalMinutes,
+      } as Ticket2
     }
 
-    ctx.close()
-    return result
+    return allEl.map(parseTicketEl)
   },
 } as Service
-
-const processResponse = (
-  jsonResp: typeof FlightSearchPollAction,
-  url: string,
-): Ticket[] =>
-  Object.entries(jsonResp.FlightResultsList.results)
-    .filter(([_, result]) => !result.itemType.includes('AD'))
-    .map(
-      ([_, result]) =>
-        result as typeof FlightSearchPollAction.FlightResultsList.results.b7b642d3d6e336d621e3ee190850c716,
-    )
-    .map(result => ({
-      priceWithUrl: result.optionsByFare
-        .map(opt => opt.options)
-        .flat()
-        .map(opt => ({
-          usdPrice: opt.fees.rawPrice,
-          url,
-        }))
-        .sort(x => x.usdPrice),
-      steps: result.legs[0].segments.map(seg => ({
-        airline: `${seg.airline.code}${seg.flightNumber}`,
-        departLocalTimeIgnoreTz: new Date(seg.departure.isoDateTimeLocal + 'Z'),
-        departAirport: seg.departure.airport.code,
-        arrivalLocalTimeIgnoreTz: new Date(seg.arrival.isoDateTimeLocal + 'Z'),
-        arrivalAirport: seg.arrival.airport.code,
-      })),
-    }))
-
-function processHtml(
-  PREFIX: string,
-  textResps: string[],
-  jsonRespGetter: (obj: any) => any,
-  url: string,
-) {
-  const filteredTextResps = textResps.filter(line => line.startsWith(PREFIX))
-  for (const lineResp_ of filteredTextResps) {
-    let lineResp = lineResp_.substring(PREFIX.length)
-    while (!lineResp.endsWith('}'))
-      lineResp = lineResp.substring(0, lineResp.length - 1)
-    const jsonResp = jsonRespGetter(JSON.parse(lineResp))
-    if (jsonResp.FlightResultsList) {
-      return processResponse(jsonResp, url)
-    }
-  }
-}

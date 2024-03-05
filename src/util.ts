@@ -1,10 +1,10 @@
 import { BrowserContext } from 'playwright-core'
 
-export type Ticket = {
+export type Ticket1 = {
   priceWithUrl: {
     usdPrice: number
     url: string
-  }[]
+  }
   steps: {
     airline: string
     departLocalTimeIgnoreTz: Date
@@ -14,11 +14,24 @@ export type Ticket = {
   }[]
 }
 
+export type Ticket2 = {
+  priceWithUrl: {
+    usdPrice: number
+    url: string
+  }
+  departAirport: string
+  arrivalAirport: string
+  stopAirports: string[]
+  totalMinutes: [number] | [number, number]
+}
+
+type Ticket = Ticket1 | Ticket2
+
 export type GenUrlInfo = {
   srcs: string[]
   dsts: string[]
-  departDate: Date
-  returnDate?: Date
+  departDates: Date[]
+  returnDates?: Date[]
   carryOn?: number
   checkedBags?: number
   stops?: 0 | 1 | true
