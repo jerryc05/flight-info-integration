@@ -16,10 +16,16 @@ pnpm i
 pnpm exec playwright install chromium
 ```
 
-# Run with
+# How to run
+
+Start a chromium browser in the background
 
 ```sh
-export CDP_PORT=9222
-chrome --remote-debugging-port=$CDP_PORT --user-data-dir=$(mktemp -d) --no-first-run
-pnpm start
+CDP_PORT=9222 chrome --remote-debugging-port=$CDP_PORT --user-data-dir=$(mktemp -d) --no-first-run
+```
+
+Start node.js
+
+```sh
+CDP_PORT=9222 pnpm start
 ```
