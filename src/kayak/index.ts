@@ -100,23 +100,28 @@ export default {
         }
       }
 
-      let totalMinutes: number[] = []
+      let totalHrMin: Ticket2['totalHrMin'] = [-1, -1]
       for (const el of modVariantDefaultEls) {
         let text = el.innerText
         if (text.endsWith('m')) {
           text = text.substring(0, text.length - 1)
-          totalMinutes = text.split('h').map(parseFloat)
+          const mapped = text.split('h').map(parseFloat)
+          if (mapped.length === 2) {
+            totalHrMin = [mapped[0], mapped[1]]
+          } else if (mapped.length === 1) {
+            totalHrMin = [0, mapped[0]]
+          }
           break
         }
       }
+      if (Math.min(...totalHrMin) < 0) return null
 
-      if (stopAirports.length === 0 || totalMinutes.length === 0) return null
       return {
         priceWithUrl: { usdPrice, url },
         departAirport,
         arrivalAirport,
         stopAirports,
-        totalMinutes,
+        totalHrMin: totalHrMin,
       } as Ticket2
     }
 

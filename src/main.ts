@@ -7,256 +7,6 @@ import kayak from '@/kayak'
 import travelgo from '@/travelgo'
 import { GenUrlInfo } from '@/util'
 
-// type RoundTripTicket = {
-//   price: number
-//   departTime: string | null
-//   departAirline: string | null
-//   returnTime: string | null
-//   returnAirline: string | null
-//   link: string | null
-// }
-
-// type KayakTicketLegSegment = {
-//   flightNumber: number
-//   airline: {
-//     code: string
-//     name: string
-//   }
-//   departure: {
-//     airport: {
-//       code: string
-//       displayName: string
-//     }
-//     isoDateTimeLocal: string
-//   }
-//   arrival: KayakTicket['legs'][0]['segments'][1]['departure']
-//   duration: string
-//   cabinDisplay: string
-//   segmentQualityItems: {
-//     equipmentTypeName: string
-//   }
-// }
-
-// type KayakTicketLeg = {
-//   legDurationDisplay: string
-//   legDurationMinutes: number
-//   segments: [
-//     KayakTicketLegSegment & {
-//       layover: {
-//         duration: string
-//       }
-//     },
-//     KayakTicketLegSegment,
-//   ]
-// }
-// type KayakTicket = {
-//   legs: [KayakTicketLeg, KayakTicketLeg]
-//   optionsByFare: {
-//     options: {
-//       url: string
-//       fees: {
-//         rawPrice: number
-//         carryOnBagData: {
-//           displayPrice: string
-//         }
-//         checkedBagData: {
-//           displayPrice: string
-//           secondBag: { status: string }
-//         }
-//       }
-//     }[]
-//   }[]
-// }
-
-// async function kayak_(page: Page) {
-//   const tickets: KayakTicket[] = []
-//   const promises: Promise<void>[] = []
-
-//   function kayakMinFareOption(ticket: KayakTicket) {
-//     let option = ticket.optionsByFare[0].options[0]
-//     ticket.optionsByFare.forEach(x =>
-//       x.options.forEach(x => {
-//         if (x.fees.rawPrice < option.fees.rawPrice) option = x
-//       }),
-//     )
-//     return option
-//   }
-
-//   page.on('response', resp => {
-//     if (!resp.url().includes('/flights/results/FlightSearchPoll')) return
-//     promises.push(
-//       new Promise(async resolve => {
-//         const jsonResp = await resp.json()
-//         const bufferedScripts = jsonResp.bufferedScripts[0] as string
-//         let info =
-//           '{' +
-//           bufferedScripts.substring(bufferedScripts.indexOf('"results":{'))
-//         info = info.substring(0, info.indexOf('R9.redux.')).trimEnd()
-//         if (info.endsWith(' })')) info = info.substring(0, info.length - 3)
-//         const jsObj = JSON.parse(info)
-//         Object.values(jsObj.results as object[]).forEach(x => {
-//           if ('legs' in x) tickets.push(x as KayakTicket)
-//         })
-//         resolve()
-//       }),
-//     )
-//   })
-
-//   await page.goto(
-//     'https://www.kayak.com/flights/SFO-CAN,HAK,SHA/2024-01-22?sort=price_a&fs=cfc=1' /*carry on*/ +
-//       ';stops=-2' /*nonstop+1stop*/ +
-//       ';bfc=1' /*checked bag*/,
-//   )
-
-//   try {
-//     const totalPages = 5
-//     for (let i = 2; i <= totalPages; i++) {
-//       const loadMore = await page.waitForSelector('.show-more-button')
-//       await loadMore.click()
-//       console.log(`kayak: loading page ${i}/${totalPages}`)
-//       await page.waitForSelector('.show-more-button')
-//     }
-//   } catch (e) {}
-//   await page.waitForTimeout(1000)
-
-//   await Promise.allSettled(promises)
-//   console.log(`kayak: allSettled, ${tickets.length} tickets`)
-
-//   tickets.sort(
-//     (a, b) =>
-//       kayakMinFareOption(a).fees.rawPrice - kayakMinFareOption(b).fees.rawPrice,
-//   )
-//   tickets.forEach(x => {
-//     const minFareOption = kayakMinFareOption(x)
-//     const url = new URL(page.url())
-//     console.log(
-//       `--------------------\n$${minFareOption.fees.rawPrice} ${url.protocol}//${
-//         url.host
-//       }${minFareOption.url.startsWith('/') ? '' : '/'}${minFareOption.url}`,
-//     )
-//     x.legs.forEach(leg => {
-//       console.log(`    ${leg.legDurationDisplay}`)
-//       leg.segments.forEach(x => {
-//         process.stdout.write(
-//           `        ${x.airline.code}${x.flightNumber}\t${x.duration}\t${x.departure.isoDateTimeLocal}->${x.arrival.isoDateTimeLocal}\t${x.departure.airport.displayName}(${x.departure.airport.code})\t-> ${x.arrival.airport.displayName}(${x.arrival.airport.code})`,
-//         )
-//         if ('layover' in x) {
-//           process.stdout.write(` (Layover: ${x.layover.duration})`)
-//         }
-//         console.log()
-//       })
-//     })
-//   })
-
-//   console.log('kayak: done')
-
-//   /*
-
-//   */
-
-//   // // Wait for all results to load.
-//   // page.waitForFunction(
-//   //   'document.querySelector(".col-advice > div").ariaBusy == "false"'
-//   // );
-//   // console.log("kayak: first result ready");
-
-//   // // no hacker fares
-//   // {
-//   //   try {
-//   //     const titleSelector = "div[class*=-title-inner]";
-//   //     await page.waitForSelector(titleSelector, { timeout: 1000 });
-//   //     console.log("kayak: found -title-inner");
-//   //     const titles = await page.$$(titleSelector);
-
-//   //     let foundFlightQuality = false;
-//   //     for (const title of titles) {
-//   //       const text = await title.textContent();
-//   //       if (text?.includes("Flight quality")) {
-//   //         await title.click();
-//   //         foundFlightQuality = true;
-//   //         break;
-//   //       }
-//   //     }
-//   //     if (!foundFlightQuality) {
-//   //       console.error("kayak: ERROR: could not find Flight Quality");
-//   //     }
-//   //   } catch (e) {
-//   //     const qualitySection = await page.waitForSelector(
-//   //       "h3[id*=-quality-section-title-text].title"
-//   //     );
-//   //     await qualitySection.click();
-//   //   }
-
-//   //   const qualitySection = await page.waitForSelector(
-//   //     "div[data-name=quality-section]"
-//   //   );
-//   //   const labels = await qualitySection.$$("label");
-
-//   //   let foundHackerFaresCheckbox = false;
-//   //   for (const label of labels) {
-//   //     const text = await label.textContent();
-//   //     if (text?.includes("Hacker Fares")) {
-//   //       label.click();
-//   //       foundHackerFaresCheckbox = true;
-//   //       break;
-//   //     }
-//   //   }
-//   //   if (!foundHackerFaresCheckbox) {
-//   //     console.error("kayak: ERROR: could not find Hacker Fares checkbox");
-//   //   }
-//   // }
-
-//   // const ticketSelector =
-//   //   ".Ui-Flights-Results-Components-ListView-container > div > div[data-resultid]";
-//   // await page.waitForSelector(ticketSelector);
-//   // const tickets = await page.$$(ticketSelector);
-
-//   // const allTickets: RoundTripTicket[] = [];
-//   // for await (const ticket of tickets) {
-//   //   const priceDiv = await ticket.waitForSelector("div[class*=-price-text]");
-//   //   let price = await priceDiv.textContent();
-//   //   if (price == null) price = "0";
-//   //   if (price[0] == "$") price = price.slice(1);
-
-//   //   const roundTrips = await ticket.$$("ol > li");
-//   //   console.assert(roundTrips.length === 2);
-//   //   const times: (string | null)[][] = [];
-
-//   //   for (const trip of roundTrips) {
-//   //     const timeDiv = await trip.waitForSelector(
-//   //       "div[class*=-mod-variant-large]"
-//   //     );
-//   //     const timeText = await timeDiv.textContent();
-//   //     const airlineDiv = await trip.waitForSelector(
-//   //       "div[class*=-mod-variant-default]"
-//   //     );
-//   //     const airlineText = await airlineDiv.textContent();
-//   //     times.push([timeText, airlineText]);
-//   //   }
-
-//   //   const bookDiv1 = await ticket.waitForSelector("div[class*=-booking-btn]");
-//   //   const bookDiv2 = await bookDiv1.waitForSelector(
-//   //     "div[class*=-main-btn-wrap]"
-//   //   );
-//   //   const bookLink_ = await bookDiv2.waitForSelector("a");
-//   //   const bookLink = await bookLink_.getAttribute("href");
-
-//   //   const url = new URL(page.url());
-//   //   allTickets.push(
-//   //     new RoundTripTicket(
-//   //       parseFloat(price),
-//   //       times[0][0],
-//   //       times[0][1],
-//   //       times[1][0],
-//   //       times[1][1],
-//   //       `${url.protocol}//${url.hostname}${bookLink}`
-//   //     )
-//   //   );
-//   // }
-//   // allTickets.sort((a, b) => a.price - b.price);
-//   // allTickets.forEach((x) => console.log(x));
-// }
-
 // async function google2(page: Page) {
 //   await page.goto('https://www.google.com/travel/flights')
 
@@ -329,11 +79,9 @@ export async function main() {
   const browser = await browser_.connectOverCDP(
     `http://127.0.0.1:${env.CDP_PORT}`,
   )
-
-  const createBorwserCtx = () =>
-    browser.newContext({
-      viewport: { width: 1080, height: 1080 },
-    })
+  const defaultBorwserCtx = await browser.newContext({
+    viewport: { width: 1080, height: 1080 },
+  })
 
   // google.run(await newContext(), args)
   // return
@@ -342,10 +90,10 @@ export async function main() {
     await Promise.all([
       ...kayak
         .gen_url(args)
-        .map(async url => await kayak.run(await createBorwserCtx(), url)),
+        .map(async url => await kayak.run(defaultBorwserCtx, url)),
       // ...travelgo
       //   .gen_url(args)
-      //   .map(async url => await travelgo.run(await createBorwserCtx(), url)),
+      //   .map(async url => await travelgo.run(defaultBorwserCtx, url)),
     ])
   )
     .flat()
@@ -355,7 +103,7 @@ export async function main() {
     depth: null,
   })
 
-  // browser.close()
+  defaultBorwserCtx.close()
 }
 
 main()

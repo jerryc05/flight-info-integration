@@ -22,7 +22,7 @@ export type Ticket2 = {
   departAirport: string
   arrivalAirport: string
   stopAirports: string[]
-  totalMinutes: [number] | [number, number]
+  totalHrMin: [number, number]
 }
 
 type Ticket = Ticket1 | Ticket2
