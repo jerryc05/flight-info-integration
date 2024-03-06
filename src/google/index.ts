@@ -56,13 +56,13 @@ export default {
     // src, dst, date
     await srcDsrHelper(
       inputs[0],
-      args.srcs[0], //todo
+      args.srcIatas[0], //todo
       page,
       'depart',
     )
     await srcDsrHelper(
       inputs[1],
-      args.dsts[0], //todo
+      args.dstIatas[0], //todo
       page,
       'return',
     )

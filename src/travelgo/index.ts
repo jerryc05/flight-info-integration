@@ -7,8 +7,8 @@ import * as SampleResponse from './travelgo.json'
 export default {
   gen_url(args: GenUrlInfo) {
     const ans: string[] = []
-    for (const src of args.srcs)
-      for (const dst of args.dsts)
+    for (const src of args.srcIatas)
+      for (const dst of args.dstIatas)
         ans.push(
           `https://www.travelgo.com/iflight/book1.html?para=0*${src}*${dst}*${
             getMyDate(args.departDates).year

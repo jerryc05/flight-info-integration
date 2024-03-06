@@ -4,6 +4,7 @@ import { env } from 'process'
 
 import google from '@/google'
 import kayak from '@/kayak'
+import skyscanner from '@/skyscanner'
 import travelgo from '@/travelgo'
 import { GenUrlInfo } from '@/util'
 
@@ -66,9 +67,9 @@ import { GenUrlInfo } from '@/util'
 // }
 
 const args: GenUrlInfo = {
-  srcs: ['ATL'],
-  dsts: ['CAN', 'HAK', 'SHA', 'XMN', 'FOC'],
-  departDates: [new Date('2024-05-09')],
+  srcIatas: ['ATL'],
+  dstIatas: ['CAN', 'SZX', 'HAK', 'SHA', 'PVG', 'XMN', 'FOC'],
+  departDates: [new Date('2024-05-09'), new Date('2024-05-10')],
   carryOn: 1,
   checkedBags: 1,
 }
@@ -79,7 +80,7 @@ export async function main() {
   const browser = await browser_.connectOverCDP(
     `http://127.0.0.1:${env.CDP_PORT}`,
   )
-  const defaultBorwserCtx = await browser.newContext({
+  const ctx = await browser.newContext({
     viewport: { width: 1080, height: 1080 },
   })
 
@@ -88,22 +89,19 @@ export async function main() {
 
   const allTickets = (
     await Promise.all([
-      ...kayak
-        .gen_url(args)
-        .map(async url => await kayak.run(defaultBorwserCtx, url)),
-      // ...travelgo
-      //   .gen_url(args)
-      //   .map(async url => await travelgo.run(defaultBorwserCtx, url)),
+      // ...kayak.gen_url(args).map(url => kayak.run(ctx, url)),
+      ...skyscanner.gen_url(args).map(url => skyscanner.run(ctx, url)),
+      // ...travelgo.gen_url(args).map(url => travelgo.run(ctx, url)),
     ])
   )
     .flat()
-    .sort(x => x.priceWithUrl.usdPrice)
+    .sort((a, b) => a.priceWithUrl.usdPrice - b.priceWithUrl.usdPrice)
 
   console.dir(allTickets, {
     depth: null,
   })
 
-  defaultBorwserCtx.close()
+  ctx.close()
 }
 
 main()
